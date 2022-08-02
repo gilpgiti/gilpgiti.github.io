@@ -1,0 +1,22 @@
+{
+ "type": "A",
+ "title": "Computadoras",
+ "description": "Contenido de la lección «1. Computadoras.",
+ "printDescription": "Página para imprimir de la lección «1. Computadoras».",
+ "listado": [
+  {
+   "name": "mAcomputadora.html",
+   "title": "Computadora electrónica",
+   "h1": "<dfn>Computadora electrónica</dfn>",
+   "description": "Definición y fotografía de computadora electrónica."
+  },
+  {
+   "name": "mBtipos"
+  },
+  {
+   "name": "mCresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «1. Computadoras»."
+  }
+ ]
+}

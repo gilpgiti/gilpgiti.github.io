@@ -1,0 +1,31 @@
+{
+ "type": "A",
+ "title": "Programas",
+ "description": "Contenido de la lección «2. Programas».",
+ "printDescription": "Página para imprimir de la lección «2. Programas».",
+ "listado": [
+  {
+   "name": "mAprograma.html",
+   "title": "Programa",
+   "h1": "<dfn>Programa</dfn>",
+   "description": "Definición de programa."
+  },
+  {
+   "name": "mBoperativo.html",
+   "title": "Sistema operativo",
+   "h1": "<dfn>Sistema operativo</dfn>",
+   "description": "Definición de sistema operativo."
+  },
+  {
+   "name": "mCoperativos"
+  },
+  {
+   "name": "mDprogramas"
+  },
+  {
+   "name": "mEresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «2. Programas»."
+  }
+ ]
+}

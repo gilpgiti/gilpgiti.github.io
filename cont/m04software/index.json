@@ -1,0 +1,93 @@
+{
+ "type": "A",
+ "title": "Fundamentos",
+ "description": "Contenido de la lección «1. Fundamentos».",
+ "printDescription": "Página para imprimir de la lección «1. Fundamentos».",
+ "listado": [
+  {
+   "name": "mAcomputadora.html",
+   "title": "Computadora electrónica",
+   "h1": "<dfn>Computadora electrónica</dfn>",
+   "description": "Definición y fotografía de computadora electrónica."
+  },
+  {
+   "name": "mBdispositivos"
+  },
+  {
+   "name": "mCprograma.html",
+   "title": "Programa",
+   "h1": "<dfn>Programa</dfn>",
+   "description": "Definición de programa."
+  },
+  {
+   "name": "mDoperativo.html",
+   "title": "Sistema operativo",
+   "h1": "<dfn>Sistema operativo</dfn>",
+   "description": "Definición de sistema operativo."
+  },
+  {
+   "name": "mEoperativos"
+  },
+  {
+   "name": "mFprogramas"
+  },
+  {
+   "name": "mGhardware.html",
+   "title": "Hardware",
+   "h1": "<dfn>Hardware</dfn>",
+   "description": "Definición de hardware."
+  },
+  {
+   "name": "mHarquitectura.html",
+   "title": "Arquitectura de hardware",
+   "h1": "<dfn>Arquitectura de hardware</dfn>",
+   "description": "Definición de arquitectura de hardware."
+  },
+  {
+   "name": "mIsoftware.html",
+   "title": "Software",
+   "h1": "<dfn>Software</dfn>",
+   "description": "Definición de software."
+  },
+  {
+   "name": "mJlenguaje.html",
+   "title": "Lenguaje de programación",
+   "h1": "<dfn>Lenguaje de programación</dfn>",
+   "description": "Definición de lenguaje de programación."
+  },
+  {
+   "name": "mKmaquina.html",
+   "title": "Lenguaje de máquina",
+   "h1": "<dfn>Lenguaje de máquina</dfn>",
+   "description": "Definición de lenguaje de máquina."
+  },
+  {
+   "name": "mLcodigo.html",
+   "title": "Código fuente",
+   "h1": "<dfn>Código fuente</dfn>",
+   "description": "Definición de código fuente."
+  },
+  {
+   "name": "mMcompilador.html",
+   "title": "Compilador",
+   "description": "Definición de compilador y lista algunos lenguajes de programación que son compilados."
+  },
+  {
+   "name": "mNinterprete.html",
+   "title": "Intérprete",
+   "h1": "<dfn>Intérprete</dfn>",
+   "description": "Definición de intérprete y lista algunos lenguajes de programación que son interpretados."
+  },
+  {
+   "name": "mOalgoritmo.html",
+   "title": "Algoritmo",
+   "h1": "<dfn>Algoritmo</dfn>",
+   "description": "Definición de algoritmo."
+  },
+  {
+   "name": "mPresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «1. Fundamentos»."
+  }
+ ]
+}

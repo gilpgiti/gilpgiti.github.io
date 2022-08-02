@@ -1,0 +1,59 @@
+{
+ "type": "A",
+ "title": "Números",
+ "description": "Contenido de la lección «17. Números».",
+ "printDescription": "Página para imprimir de la lección «17. Números».",
+ "listado": [
+  {
+   "name": "mAnaturales.html",
+   "title": "Los números naturales (&naturals;)",
+   "description": "Origen de los números naturales (&naturals;)."
+  },
+  {
+   "name": "mBsuma.html",
+   "title": "La suma",
+   "description": "Definición de la suma."
+  },
+  {
+   "name": "mCmultiplicacion.html",
+   "title": "La multiplicación",
+   "description": "Definición de la multiplicación."
+  },
+  {
+   "name": "mDenteros.html",
+   "title": "Los números enteros (&integers;)",
+   "description": "Definición de los números enteros (&integers;)."
+  },
+  {
+   "name": "mEracionales.html",
+   "title": "Los números racionales (&rationals;)",
+   "description": "Definición de los números racionales (&rationals;)."
+  },
+  {
+   "name": "mFirracionales.html",
+   "title": "Los números irracionales",
+   "description": "Definición de los números irracionales."
+  },
+  {
+   "name": "mGrarezas.html",
+   "title": "Rarezas matemáticas",
+   "description": "Presentación de algunas rarezas matemáticas."
+    },
+  {
+   "name": "mHgodel.html",
+   "title": "Los teoremas de Gödel",
+   "description": "Presentación de los teoremas de Gödel."
+    },
+  {
+   "name": "mInumber.html",
+   "title": "El tipo de dato number",
+   "h1": "El tipo de dato <dfn><code class=\"language-javascript\">number</code></dfn>",
+   "description": "Definición del tipo de dato number."
+    },
+  {
+   "name": "mJresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «17. Números»."
+    }
+ ]
+}

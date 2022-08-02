@@ -1,0 +1,61 @@
+{
+ "type": "A",
+ "title": "Hardware",
+ "description": "Contenido de la lección «3. Hardware».",
+ "printDescription": "Página para imprimir de la lección «3. Hardware».",
+ "listado": [
+  {
+   "name": "mAhardware.html",
+   "title": "Hardware",
+   "h1": "<dfn>Hardware</dfn>",
+   "description": "Definición de hardware."
+  },
+  {
+   "name": "mBarquitectura.html",
+   "title": "Arquitectura de hardware",
+   "h1": "<dfn>Arquitectura de hardware</dfn>",
+   "description": "Definición de arquitectura de hardware."
+  },
+  {
+   "name": "mCmotherboard.html",
+   "title": "Tarjeta madre",
+   "h1": "<dfn>Tarjeta madre</dfn>",
+   "description": "Definición y fotografía de tarjeta madre."
+  },
+  {
+   "name": "mDmemoria.html",
+   "title": "Memoria",
+   "h1": "<dfn>Memoria</dfn>",
+   "description": "Definición y fotografía de memoria."
+  },
+  {
+   "name": "mEcpu.html",
+   "title": "CPU",
+   "h1": "<dfn>CPU</dfn>",
+   "description": "Definición y fotografía de CPU."
+  },
+  {
+   "name": "mFentrada.html",
+   "title": "Dispositivo de entrada",
+   "h1": "<dfn>Dispositivo de entrada</dfn>",
+   "description": "Definición y fotografía de dispositivo de entrada."
+  },
+  {
+   "name": "mGsalida.html",
+   "title": "Dispositivo de salida",
+   "h1": "<dfn>Dispositivo de salida</dfn>",
+   "description": "Definición y fotografía de dispositivo de salida."
+  },
+  {
+   "name": "mHentradaSalida.html",
+   "title": "Dispositivo de entrada y salida",
+   "h1": "<dfn>Dispositivo de entrada y salida</dfn>",
+   "description": "Definición y fotografía de dispositivo de entrada y salida."
+  },
+  {
+   "name": "mIresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «3. Hardware»."
+  }
+ ]
+}

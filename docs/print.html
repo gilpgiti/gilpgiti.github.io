@@ -1,0 +1,3694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Introducción a las tecnologías de la información - GilPG IJS</title>
+ <meta name="description" content="Página para imprimir todo el contenido de GilPGITI que enseña introducción a las tecnologías de la información.">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="sitio">Introducción a las tecnologías de la información</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p class="autor">por Gilberto Pacheco Gallegos</p>
+ <ul>
+  <li>
+   <p>
+    Este sitio presenta contenido introductorio sobre las tecnologías de la
+    información
+   </p>
+  </li>
+  <li>
+   <p>
+    Puedes ver el listado de mis sitios educativos en
+    <a href="https://gilpgcl.github.io" target="_blank"
+      rel="noopener">https://gilpgcl.github.io</a>.
+   </p>
+  </li>
+ </ul>
+ <section class="noPrint">
+ <h1>Instrucciones de navegación</h1>
+ <ul>
+  <li>
+   <p>
+    Los siguientes controles te permitirán navegar por todo el contenido del
+    sitio.
+   </p>
+   <dl>
+    <dt>
+     <button type="button" title="Cierra">&#x2715;</button>
+    </dt>
+    <dd>
+     <p>Oculta el menú de navegación.</p>
+    </dd>
+    <dt>
+     <button type="button" title="Menú">&#x2630;</button>
+    </dt>
+    <dd>
+     <p>Muestra el menú de navegación.</p>
+    </dd>
+    <dt>
+     <span class="anterior" title="Página anterior">◀</span>
+    </dt>
+    <dt>
+     <kbd>←</kbd> (Tecla flecha a la izquierda)
+    </dt>
+    <dt>
+     Swipe hacia la derecha
+    </dt>
+    <dd>
+     <p>Regresa a la página anterior.</p>
+    </dd>
+    <dt>
+     <span class="siguiente" title="Página siguiente">▶</span>
+    </dt>
+    <dt>
+     <kbd>→</kbd> (Tecla flecha a la derecha)
+    </dt>
+    <dt>
+     Swipe hacia la izquierda
+    </dt>
+    <dd>
+     <p>Avanza a la página siguiente.</p>
+    </dd>
+   </dl>
+  </li>
+ </ul>
+</section>
+ <nav>
+  <h1>Lecciones</h1>
+  
+   <ol type="1">
+    <li>
+     <p>
+      <a href="/m01computadoras/">Computadoras</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/">Programas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/">Hardware</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/">Fundamentos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/">Conceptos básicos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/">Números</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/">Aplicaciones nativas y multiplataforma</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section>
+         <h1 class="leccion">1. Computadoras</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan conceptos que son necesarios para entender como
+  funciona una computadora.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m01computadoras/mAcomputadora.html"><dfn>Computadora electrónica</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/">Tipos de computadoras</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mCresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. <dfn>Computadora electrónica</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Máquina electrónica que, mediante determinados programas, permite
+    almacenar y tratar información, y resolver problemas de diversa índole.
+   </blockquote>
+   <figure>
+    <picture>
+     <source srcset="/img/m01Fundamentos/pexels-teona-swift-6912819-640.webp"
+       media="(max-width: 640px)">
+     <img class="med" alt="Computadoras"
+       src="/img/m01Fundamentos/pexels-teona-swift-6912819-1920.webp">
+    </picture>
+    <figcaption>
+     Computadoras en nuestra vida
+     (<a
+        href="https://www.pexels.com/es-es/foto/persona-cafe-taza-mano-6912819/"
+        target="_blank" rel="noopener">Foto de <strong>Teona Swift</strong> en
+       <strong>Pexels</strong></a>)
+    </figcaption>
+   </figure>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section>
+         <h1 >B. Tipos de computadoras</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <nav>
+  
+   <ul>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m1wearables.html">Wearables</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m2asistentes.html">Dispositivos asistentes</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m3arduino.html">Hardware abierto</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m4consolas.html">Consolas de videojuegos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m5celulares.html">Teléfonos celulares</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m6tablets.html">Tablets</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m7laptops.html">Laptops</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m8desktops.html">Desktops</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01computadoras/mBtipos/m9servidores.html">Servidores</a>
+     </p>
+    </li>
+   </ul>
+ </nav>
+</div>
+     <section >
+         <h1 >Wearables</h1><figure>
+ <picture>
+  <source srcset="/img/m01Fundamentos/pexels-ketut-subiyanto-4436291-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Wearables"
+    src="/img/m01Fundamentos/pexels-ketut-subiyanto-4436291-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/mujer-telefono-inteligente-navegando-internet-4436291/"
+    target="_blank" rel="noopener">Foto de <strong>Ketut Subiyanto</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Dispositivos asistentes</h1><figure>
+ <picture>
+  <source srcset="/img/m01Fundamentos/pexels-fabian-hurnaus-977296-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Dispositivos asistentes"
+    src="/img/m01Fundamentos/pexels-fabian-hurnaus-977296-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/eco-amazonas-negro-sobre-mesa-977296/"
+    target="_blank" rel="noopener">Foto de <strong>Fabian Hurnaus</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Hardware abierto</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-the-lazy-artist-gallery-1170344-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Hardware abierto"
+    src="/img/m01Fundamentos/pexels-the-lazy-artist-gallery-1170344-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/mujer-jugando-drone-1170344/"
+    target="_blank" rel="noopener">Foto de <strong>The Lazy Artist
+    Gallery</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Consolas de videojuegos</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-ketut-subiyanto-4545975-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Consola"
+    src="/img/m01Fundamentos/pexels-ketut-subiyanto-4545975-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/amor-nina-relacion-negro-4545975/"
+    target="_blank" rel="noopener">Foto de <strong>Ketut Subiyanto</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Teléfonos celulares</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-andrea-piacquadio-3781725-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Teléfono celular"
+    src="/img/m01Fundamentos/pexels-andrea-piacquadio-3781725-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/fotografia-en-primer-plano-de-una-mujer-rubia-3781725/"
+    target="_blank" rel="noopener">Foto de <strong>Andrea Piacquadio</strong>
+   en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Tablets</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-andrea-piacquadio-3776817-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Tablet"
+    src="/img/m01Fundamentos/pexels-andrea-piacquadio-3776817-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/mujer-alegre-mostrando-amigos-video-divertido-en-tableta-3776817/"
+    target="_blank" rel="noopener">Foto de <strong>Andrea Piacquadio</strong>
+   en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Laptops</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-tima-miroshnichenko-6021573-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Laptop"
+    src="/img/m01Fundamentos/pexels-tima-miroshnichenko-6021573-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/ordenador-portatil-navidad-papa-noel-ropa-6021573/"
+    target="_blank" rel="noopener">Foto de <strong>Tima Miroshnichenko</strong>
+   en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Desktops</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-bich-tran-1714341-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Computadora de escritorio"
+    src="/img/m01Fundamentos/pexels-bich-tran-1714341-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/encendido-del-monitor-el-teclado-y-los-elementos-del-escritorio-1714341/"
+    target="_blank" rel="noopener">Foto de <strong>Bich Tran</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Servidores</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-manuel-geissinger-325229-640.webp"
+    media="(max-width: 640px)">
+  <img src="/img/m01Fundamentos/pexels-manuel-geissinger-325229-1920.webp"
+    alt="Servidores">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/interior-del-edificio-de-oficinas-325229/"
+    target="_blank" rel="noopener">Foto de <strong>Manuel Geissinger</strong>
+   en <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+      </section>
+     <section >
+         <h1 >C. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se definió el concepto de computadora y se presentaron
+    varios tipos de esta.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">2. Programas</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan conceptos que son necesarios para entender como
+  funciona una computadora.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m02programas/mAprograma.html"><dfn>Programa</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mBoperativo.html"><dfn>Sistema operativo</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mCoperativos/">Ejemplos de sistemas operativos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mDprogramas/">Otros tipos de programas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mEresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. <dfn>Programa</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Conjunto unitario de instrucciones que permite a una computadora realizar
+    funciones diversas, como el tratamiento de textos, el diseño de gráficos,
+    la resolución de problemas matemáticos, el manejo de bancos de datos,
+    etc.
+   </blockquote>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >B. <dfn>Sistema operativo</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Programa o conjunto de programas que realizan funciones básicas y
+    permiten el desarrollo de otros programas.
+   </blockquote>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section>
+         <h1 >C. Ejemplos de sistemas operativos</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <nav>
+  
+   <ul>
+    <li>
+     <p>
+      <a href="/m02programas/mCoperativos/m1android.html">Android</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mCoperativos/m2windows.html">Windows</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mCoperativos/m3ios.html">iOS</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mCoperativos/m4macos.html">macOS</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mCoperativos/m5linux.html">Linux</a>
+     </p>
+    </li>
+   </ul>
+ </nav>
+</div>
+     <section >
+         <h1 >Android</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/android-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Android" src="/img/m01Fundamentos/android-1080.webp">
+ </picture>
+ <figcaption>Android 11 de Google</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Windows</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/windows10-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Windows" src="/img/m01Fundamentos/windows10-1920.webp">
+ </picture>
+ <figcaption>Microsoft Windows 10</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >iOS</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/ios-640.webp"
+    media="(max-width: 640px)">
+  <img alt="iOS" src="/img/m01Fundamentos/ios-1152.webp">
+ </picture>
+ <figcaption>iPad Pro de Apple</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >macOS</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/macos-640.webp"
+    media="(max-width: 640px)">
+  <img alt="macOS" src="/img/m01Fundamentos/macos-1152.webp">
+ </picture>
+ <figcaption>macOS de Apple</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Linux</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/mxlinux-640.webp"
+    media="(max-width: 640px)">
+  <img alt="macOS" src="/img/m01Fundamentos/mxlinux-1200.webp">
+ </picture>
+ <figcaption>MX Linux</figcaption>
+</figure>
+      </section>
+      </section>
+     <section>
+         <h1 >D. Otros tipos de programas</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <nav>
+  
+   <ul>
+    <li>
+     <p>
+      <a href="/m02programas/mDprogramas/m1videojuegos.html">Videojuegos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mDprogramas/m2asistentes.html">Asistentes virtuales</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mDprogramas/m3oficina.html">Programas de oficina</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mDprogramas/m4sitios.html">Navegadores y sitios web</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02programas/mDprogramas/m5videoconferencia.html">Sistemas de videoconferencia</a>
+     </p>
+    </li>
+   </ul>
+ </nav>
+</div>
+     <section >
+         <h1 >Videojuegos</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/fortnite-cube-assassin-boss-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Android" src="/img/m01Fundamentos/fortnite-cube-assassin-boss-1920.webp">
+ </picture>
+ <figcaption>Fortnite de Epic Games</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Asistentes virtuales</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-fabian-hurnaus-977296-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Asistente virtual"
+    src="/img/m01Fundamentos/pexels-fabian-hurnaus-977296-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/eco-amazonas-negro-sobre-mesa-977296/"
+    target="_blank" rel="noopener">Foto de <strong>Fabian Hurnaus</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Programas de oficina</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/winword-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Asistente virtual"
+    src="/img/m01Fundamentos/winword-1920.webp">
+ </picture>
+ <figcaption>Microsoft Word</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Navegadores y sitios web</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/youtube-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Chrome y YouTube de Google"
+    src="/img/m01Fundamentos/youtube-1920.webp">
+ </picture>
+ <figcaption>Chrome y YouTube de Google</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Sistemas de videoconferencia</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/teams-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Sistema de videoconferencia"
+    src="/img/m01Fundamentos/teams-1920.webp">
+ </picture>
+ <figcaption>Microsoft Teams</figcaption>
+</figure>
+      </section>
+      </section>
+     <section >
+         <h1 >E. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se definieron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>Programa</p>
+    </li>
+    <li>
+     <p>Sistema operativo</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">3. Hardware</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan conceptos que son necesarios para entender como
+  funciona una computadora.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m03hardware/mAhardware.html"><dfn>Hardware</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/mBarquitectura.html"><dfn>Arquitectura de hardware</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/mCmotherboard.html"><dfn>Tarjeta madre</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/mDmemoria.html"><dfn>Memoria</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/mEcpu.html"><dfn>CPU</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/mFentrada.html"><dfn>Dispositivo de entrada</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/mGsalida.html"><dfn>Dispositivo de salida</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/mHentradaSalida.html"><dfn>Dispositivo de entrada y salida</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03hardware/mIresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. <dfn>Hardware</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Conjunto de aparatos de una computadora.
+   </blockquote>
+  </li>
+  <li>
+   <p>
+    Definición del
+    <em>Diccionario Oxford</em>:
+   <blockquote>
+    Conjunto de elementos físicos o materiales que constituyen una
+    computadora o un sistema informático.
+   </blockquote>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >B. <dfn>Arquitectura de hardware</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Diseño de hardware con sus propias reglas de funcionamiento, que es
+    incompatible con otras arquitecturas.
+   </p>
+  <li>
+   <p>Algunas arquitecturas de hardware son:</p>
+   <dl>
+    <dt>x86</dt>
+    <dd>
+     <p>Intel y AMD, para computadoras personales y Servidores.</p>
+    </dd>
+    <dt>ARM</dt>
+    <dd>
+     <p>Dispositivos móviles y computadoras personales Apple.</p>
+    </dd>
+    <dt>Arduino</dt>
+    <dd>
+     <p>Hardware abierto, drones, controladores</p>
+    </dd>
+   </dl>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >C. <dfn>Tarjeta madre</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Tarjeta en el interior de una computadora sobre la cual están colocados
+    los componentes que realizan el procesamiento de programas.
+   </p>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-rfstudio-3825581-640.webp"
+     media="(max-width: 640px)">
+   <img alt="Tarjeta madre dentro del chasis de una computadora"
+     src="/img/m02Conceptos/pexels-rfstudio-3825581-1920.webp">
+  </picture>
+  <figcaption>
+   <small>
+    <a href="https://www.pexels.com/es-es/foto/tecnico-de-cultivos-comprobando-los-contactos-en-la-placa-base-en-el-taller-3825581/"
+      target="_blank" rel="noopener">Foto de <strong>RF._.studio</strong> en
+     <strong>Pexels</strong></a>
+   </small>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >D. <dfn>Memoria</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Almacena todo lo que usa la una computadora para ejecutar un algoritmo:
+   </p>
+   <ul>
+    <li>
+     <p>Programas</p>
+    </li>
+    <li>
+     <p>Datos</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-valentine-tanasovich-2588757-640.webp"
+     media="(max-width: 640px)">
+   <img class="med" alt="Memoria montada en tarjeta madre"
+     src="/img/m02Conceptos/pexels-valentine-tanasovich-2588757-640.webp">
+  </picture>
+  <figcaption>
+   <a href="https://www.pexels.com/es-es/foto/placa-base-de-computadora-negra-y-gris-2588757/"
+     target="_blank" rel="noopener">Foto de <strong>Valentine
+     Tanasovich</strong> en <strong>Pexels</strong></a>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >E. <dfn>CPU</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Acrónimo del termino en inglés
+    <dfn>Central Processing Unit</dfn>,
+    que se traduce al español como
+    <dfn>Unidad Central de Procesamiento</dfn>
+    y es la parte de la computadora encargada de ejecutar los algoritmos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Utiliza un par de señales eléctricas, conocidas como
+    <dfn>1</dfn>
+    y
+    <dfn>0</dfn>
+    para representar y procesar los algoritmos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las instrucciones del algoritmo deben estar cargadas en la memoria de la
+    computadora para poder ejecutarse.
+   </p>
+  </li>
+  <li>
+   <p>
+    Puede usar datos, que también se almacenan en la memoria de la
+    computadora.
+   </p>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-pok-rie-1432673-640.webp"
+     media="(max-width: 640px)">
+   <img class="med" alt="CPU montado en tarjeta madre"
+     src="/img/m02Conceptos/pexels-pok-rie-1432673-1920.webp">
+  </picture>
+  <figcaption>
+   <a href="https://www.pexels.com/es-es/foto/fotografia-de-enfoque-selectivo-de-la-placa-base-1432673/"
+     target="_blank" rel="noopener">Foto de <strong>Pok Rie</strong> en
+    <strong>Pexels</strong></a>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >F. <dfn>Dispositivo de entrada</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Componente eléctrico o electromecánico colocado dentro o fuera de una
+    computadora, que le que permite recibir datos del exterior; por ejemplo:
+   </p>
+   <ul>
+    <li>
+     <p>Teclado</p>
+    </li>
+    <li>
+     <p>Mouse y touch pad</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-lex-photography-1109543-640.webp"
+     media="(max-width: 640px)">
+   <img class="med" alt="Teclado y ratón"
+     src="/img/m02Conceptos/pexels-lex-photography-1109543-1920.webp">
+  </picture>
+  <figcaption>
+   <small>
+    <a href="https://www.pexels.com/es-es/foto/teclado-magico-plateado-1109543/"
+      target="_blank" rel="noopener">Foto de <strong>Lex Photography</strong>
+     en <strong>Pexels</strong></a>
+   </small>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >G. <dfn>Dispositivo de salida</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Componente eléctrico o electromecánico colocado dentro o fuera de una
+    computadora, que le que permite enviar datos al exterior; por ejemplo:
+   </p>
+   <ul>
+    <li>
+     <p>Tareta de video y pantalla</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-tranmautritam-326514-640.webp"
+     media="(max-width: 640px)">
+   <img class="med" alt="Monitor"
+     src="/img/m02Conceptos/pexels-tranmautritam-326514-1920.webp">
+  </picture>
+  <figcaption>
+   <small>
+    <a href="https://www.pexels.com/es-es/foto/disparo-de-fotograma-completo-de-la-computadora-326514/"
+      target="_blank" rel="noopener">Foto de <strong>Tranmautritam</strong> en
+     <strong>Pexels</strong></a>
+   </small>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >H. <dfn>Dispositivo de entrada y salida</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Componente eléctrico o electromecánico colocado dentro o fuera
+    de una computadora, que le permite enviar datos al exterior y recibir datos
+    del exterior; por ejemplo:
+   </p>
+   <ul>
+    <li>
+     <p>Pantallas touch</p>
+    </li>
+    <li>
+     <p>Discos duros</p>
+    </li>
+    <li>
+     <p>Controladores de USB</p>
+    </li>
+    <li>
+     <p>Controladores de red Ethernet o WiFI</p>
+    </li>
+   </ul>
+   <figure>
+    <picture>
+     <source
+       srcset="/img/m02Conceptos/pexels-marek-levak-2265482-640.webp"
+       media="(max-width: 640px)">
+     <img class="med" alt="Monitor"
+       src="/img/m02Conceptos/pexels-marek-levak-2265482-1920.webp">
+    </picture>
+    <figcaption>
+     <small>
+      <a href="https://www.pexels.com/es-es/foto/mujer-sentada-junto-a-la-mesa-mientras-usa-el-i-pad-2265482/"
+        target="_blank" rel="noopener">Foto de <strong>Marek Levak</strong>
+       en <strong>Pexels</strong></a>
+     </small>
+    </figcaption>
+   </figure>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se definieron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>Hardware</p>
+    </li>
+    <li>
+     <p>Arquitectura de hardware</p>
+    </li>
+    <li>
+     <p>Tarjeta Madre</p>
+    </li>
+    <li>
+     <p>Memoria</p>
+    </li>
+    <li>
+     <p>CPU</p>
+    </li>
+    <li>
+     <p>Dispositivo de entrada</p>
+    </li>
+    <li>
+     <p>Dispositivo de salida</p>
+    </li>
+    <li>
+     <p>Dispositivo de entrada y salida</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">4. Fundamentos</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan conceptos que son necesarios para entender como
+  funciona una computadora.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m04software/mAcomputadora.html"><dfn>Computadora electrónica</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/">Tipos de computadoras</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mCprograma.html"><dfn>Programa</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mDoperativo.html"><dfn>Sistema operativo</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mEoperativos/">Ejemplos de sistemas operativos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mFprogramas/">Otros tipos de programas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mGhardware.html"><dfn>Hardware</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mHarquitectura.html"><dfn>Arquitectura de hardware</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mIsoftware.html"><dfn>Software</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mJlenguaje.html"><dfn>Lenguaje de programación</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mKmaquina.html"><dfn>Lenguaje de máquina</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mLcodigo.html"><dfn>Código fuente</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mMcompilador.html">Compilador</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mNinterprete.html"><dfn>Intérprete</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mOalgoritmo.html"><dfn>Algoritmo</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mPresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. <dfn>Computadora electrónica</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Máquina electrónica que, mediante determinados programas, permite
+    almacenar y tratar información, y resolver problemas de diversa índole.
+   </blockquote>
+   <figure>
+    <picture>
+     <source srcset="/img/m01Fundamentos/pexels-teona-swift-6912819-640.webp"
+       media="(max-width: 640px)">
+     <img class="med" alt="Computadoras"
+       src="/img/m01Fundamentos/pexels-teona-swift-6912819-1920.webp">
+    </picture>
+    <figcaption>
+     Computadoras en nuestra vida
+     (<a
+        href="https://www.pexels.com/es-es/foto/persona-cafe-taza-mano-6912819/"
+        target="_blank" rel="noopener">Foto de <strong>Teona Swift</strong> en
+       <strong>Pexels</strong></a>)
+    </figcaption>
+   </figure>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section>
+         <h1 >B. Tipos de computadoras</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <nav>
+  
+   <ul>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m1wearables.html">Wearables</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m2asistentes.html">Dispositivos asistentes</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m3arduino.html">Hardware abierto</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m4consolas.html">Consolas de videojuegos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m5celulares.html">Teléfonos celulares</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m6tablets.html">Tablets</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m7laptops.html">Laptops</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m8desktops.html">Desktops</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mBdispositivos/m9servidores.html">Servidores</a>
+     </p>
+    </li>
+   </ul>
+ </nav>
+</div>
+     <section >
+         <h1 >Wearables</h1><figure>
+ <picture>
+  <source srcset="/img/m01Fundamentos/pexels-ketut-subiyanto-4436291-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Wearables"
+    src="/img/m01Fundamentos/pexels-ketut-subiyanto-4436291-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/mujer-telefono-inteligente-navegando-internet-4436291/"
+    target="_blank" rel="noopener">Foto de <strong>Ketut Subiyanto</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Dispositivos asistentes</h1><figure>
+ <picture>
+  <source srcset="/img/m01Fundamentos/pexels-fabian-hurnaus-977296-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Dispositivos asistentes"
+    src="/img/m01Fundamentos/pexels-fabian-hurnaus-977296-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/eco-amazonas-negro-sobre-mesa-977296/"
+    target="_blank" rel="noopener">Foto de <strong>Fabian Hurnaus</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Hardware abierto</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-the-lazy-artist-gallery-1170344-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Hardware abierto"
+    src="/img/m01Fundamentos/pexels-the-lazy-artist-gallery-1170344-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/mujer-jugando-drone-1170344/"
+    target="_blank" rel="noopener">Foto de <strong>The Lazy Artist
+    Gallery</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Consolas de videojuegos</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-ketut-subiyanto-4545975-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Consola"
+    src="/img/m01Fundamentos/pexels-ketut-subiyanto-4545975-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/amor-nina-relacion-negro-4545975/"
+    target="_blank" rel="noopener">Foto de <strong>Ketut Subiyanto</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Teléfonos celulares</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-andrea-piacquadio-3781725-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Teléfono celular"
+    src="/img/m01Fundamentos/pexels-andrea-piacquadio-3781725-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/fotografia-en-primer-plano-de-una-mujer-rubia-3781725/"
+    target="_blank" rel="noopener">Foto de <strong>Andrea Piacquadio</strong>
+   en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Tablets</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-andrea-piacquadio-3776817-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Tablet"
+    src="/img/m01Fundamentos/pexels-andrea-piacquadio-3776817-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/mujer-alegre-mostrando-amigos-video-divertido-en-tableta-3776817/"
+    target="_blank" rel="noopener">Foto de <strong>Andrea Piacquadio</strong>
+   en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Laptops</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-tima-miroshnichenko-6021573-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Laptop"
+    src="/img/m01Fundamentos/pexels-tima-miroshnichenko-6021573-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/ordenador-portatil-navidad-papa-noel-ropa-6021573/"
+    target="_blank" rel="noopener">Foto de <strong>Tima Miroshnichenko</strong>
+   en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Desktops</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-bich-tran-1714341-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Computadora de escritorio"
+    src="/img/m01Fundamentos/pexels-bich-tran-1714341-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/encendido-del-monitor-el-teclado-y-los-elementos-del-escritorio-1714341/"
+    target="_blank" rel="noopener">Foto de <strong>Bich Tran</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Servidores</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-manuel-geissinger-325229-640.webp"
+    media="(max-width: 640px)">
+  <img src="/img/m01Fundamentos/pexels-manuel-geissinger-325229-1920.webp"
+    alt="Servidores">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/interior-del-edificio-de-oficinas-325229/"
+    target="_blank" rel="noopener">Foto de <strong>Manuel Geissinger</strong>
+   en <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+      </section>
+     <section >
+         <h1 >C. <dfn>Programa</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Conjunto unitario de instrucciones que permite a una computadora realizar
+    funciones diversas, como el tratamiento de textos, el diseño de gráficos,
+    la resolución de problemas matemáticos, el manejo de bancos de datos,
+    etc.
+   </blockquote>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >D. <dfn>Sistema operativo</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Programa o conjunto de programas que realizan funciones básicas y
+    permiten el desarrollo de otros programas.
+   </blockquote>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section>
+         <h1 >E. Ejemplos de sistemas operativos</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <nav>
+  
+   <ul>
+    <li>
+     <p>
+      <a href="/m04software/mEoperativos/m1android.html">Android</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mEoperativos/m2windows.html">Windows</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mEoperativos/m3ios.html">iOS</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mEoperativos/m4macos.html">macOS</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mEoperativos/m5linux.html">Linux</a>
+     </p>
+    </li>
+   </ul>
+ </nav>
+</div>
+     <section >
+         <h1 >Android</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/android-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Android" src="/img/m01Fundamentos/android-1080.webp">
+ </picture>
+ <figcaption>Android 11 de Google</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Windows</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/windows10-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Windows" src="/img/m01Fundamentos/windows10-1920.webp">
+ </picture>
+ <figcaption>Microsoft Windows 10</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >iOS</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/ios-640.webp"
+    media="(max-width: 640px)">
+  <img alt="iOS" src="/img/m01Fundamentos/ios-1152.webp">
+ </picture>
+ <figcaption>iPad Pro de Apple</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >macOS</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/macos-640.webp"
+    media="(max-width: 640px)">
+  <img alt="macOS" src="/img/m01Fundamentos/macos-1152.webp">
+ </picture>
+ <figcaption>macOS de Apple</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Linux</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/mxlinux-640.webp"
+    media="(max-width: 640px)">
+  <img alt="macOS" src="/img/m01Fundamentos/mxlinux-1200.webp">
+ </picture>
+ <figcaption>MX Linux</figcaption>
+</figure>
+      </section>
+      </section>
+     <section>
+         <h1 >F. Otros tipos de programas</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <nav>
+  
+   <ul>
+    <li>
+     <p>
+      <a href="/m04software/mFprogramas/m1videojuegos.html">Videojuegos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mFprogramas/m2asistentes.html">Asistentes virtuales</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mFprogramas/m3oficina.html">Programas de oficina</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mFprogramas/m4sitios.html">Navegadores y sitios web</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04software/mFprogramas/m5videoconferencia.html">Sistemas de videoconferencia</a>
+     </p>
+    </li>
+   </ul>
+ </nav>
+</div>
+     <section >
+         <h1 >Videojuegos</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/fortnite-cube-assassin-boss-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Android" src="/img/m01Fundamentos/fortnite-cube-assassin-boss-1920.webp">
+ </picture>
+ <figcaption>Fortnite de Epic Games</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Asistentes virtuales</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/pexels-fabian-hurnaus-977296-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Asistente virtual"
+    src="/img/m01Fundamentos/pexels-fabian-hurnaus-977296-1920.webp">
+ </picture>
+ <figcaption>
+  <a href="https://www.pexels.com/es-es/foto/eco-amazonas-negro-sobre-mesa-977296/"
+    target="_blank" rel="noopener">Foto de <strong>Fabian Hurnaus</strong> en
+   <strong>Pexels</strong></a>
+ </figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Programas de oficina</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/winword-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Asistente virtual"
+    src="/img/m01Fundamentos/winword-1920.webp">
+ </picture>
+ <figcaption>Microsoft Word</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Navegadores y sitios web</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/youtube-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Chrome y YouTube de Google"
+    src="/img/m01Fundamentos/youtube-1920.webp">
+ </picture>
+ <figcaption>Chrome y YouTube de Google</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >Sistemas de videoconferencia</h1><figure>
+ <picture>
+  <source
+    srcset="/img/m01Fundamentos/teams-640.webp"
+    media="(max-width: 640px)">
+  <img alt="Sistema de videoconferencia"
+    src="/img/m01Fundamentos/teams-1920.webp">
+ </picture>
+ <figcaption>Microsoft Teams</figcaption>
+</figure>
+      </section>
+      </section>
+     <section >
+         <h1 >G. <dfn>Hardware</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Conjunto de aparatos de una computadora.
+   </blockquote>
+  </li>
+  <li>
+   <p>
+    Definición del
+    <em>Diccionario Oxford</em>:
+   <blockquote>
+    Conjunto de elementos físicos o materiales que constituyen una
+    computadora o un sistema informático.
+   </blockquote>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >H. <dfn>Arquitectura de hardware</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Diseño de hardware con sus propias reglas de funcionamiento, que es
+    incompatible con otras arquitecturas.
+   </p>
+  <li>
+   <p>Algunas arquitecturas de hardware son:</p>
+   <dl>
+    <dt>x86</dt>
+    <dd>
+     <p>Intel y AMD, para computadoras personales y Servidores.</p>
+    </dd>
+    <dt>ARM</dt>
+    <dd>
+     <p>Dispositivos móviles y computadoras personales Apple.</p>
+    </dd>
+    <dt>Arduino</dt>
+    <dd>
+     <p>Hardware abierto, drones, controladores</p>
+    </dd>
+   </dl>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. <dfn>Software</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>;
+   <blockquote>
+    Conjunto de programas, instrucciones y reglas informáticas para
+    ejecutar ciertas tareas en una computadora.
+   </blockquote>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >J. <dfn>Lenguaje de programación</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Conjunto de signos y reglas que permite la comunicación con una
+    computadora.
+   </blockquote>
+  </li>
+  <li>
+   <p>
+    Los programas normalmente se construyen usando uno o más lenguajes de
+    programación.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >K. <dfn>Lenguaje de máquina</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Conjunto de instrucciones codificadas que una computadora interpreta y
+    ejecuta directamente.
+   </blockquote>
+  </li>
+  <li>
+   <p>
+    Cada arquitectura de hardware tiene un código de máquina diferente.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >L. <dfn>Código fuente</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Programa expresado usando uno o más lenguajes de programación.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >M. Compilador</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definiciones de la
+    <em>Real Academia Española</em>:
+   </p>
+   <dl>
+    <dt><dfn>Compilar</dfn></dt>
+    <dd>
+     <blockquote>
+      Convertir un programa en lenguaje máquina a partir de otro programa de
+      computadora escrito en otro lenguaje.
+     </blockquote>
+    </dd>
+    <dt><dfn>Compilador</dfn></dt>
+    <dd>
+     <blockquote>
+      Programa que compila.
+     </blockquote>
+    </dd>
+   </dl>
+  </li>
+  <li>
+   <p>
+    Un compilador toma como entrada el código de un lenguaje de programación y
+    genera el código para una combinación de lenguaje de máquina y sistema
+    operativo precisos.
+   </p>
+   <figure>
+    <img src="/img/m01Fundamentos/compilador.svg"
+      alt="Funcionamiento de un compilador">
+    <figcaption>Funcionamiento de un compilador</figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>Algunos lenguajes de programación que se compilan son:</p>
+   <ul>
+    <li>Java</li>
+    <li>C</li>
+    <li>C++</li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >N. <dfn>Intérprete</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Programa que ejecuta un código de un lenguaje de computación sin generar
+    un archivo de compilación.
+   </p>
+   <figure>
+    <img src="/img/m01Fundamentos/interprete.svg"
+      alt="Funcionamiento de un intérprete">
+    <figcaption>Funcionamiento de un intérprete</figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    Los lenguajes de programación usados normalmente en un navegador
+    web, como HTML, CSS y JavaScript son interpretados.
+   </p>
+  </li>
+  <li>
+   <p>
+    El lenguaje de programación Java se compila a un lenguaje de máquina
+    genérico y luego es ejecutado por un intérprete de ese lenguaje de máquina.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >O. <dfn>Algoritmo</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Definición de la
+    <em>Real Academia Española</em>:
+   </p>
+   <blockquote>
+    Conjunto ordenado y finito de operaciones que permite hallar la solución
+    de un problema.
+   </blockquote>
+  </li>
+  <li>
+   <p>Los programas son implementaciones de algoritmos.</p>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >P. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se definieron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>Computadora electrónica</p>
+    </li>
+    <li>
+     <p>Programa</p>
+    </li>
+    <li>
+     <p>Sistema operativo</p>
+    </li>
+    <li>
+     <p>Hardware</p>
+    </li>
+    <li>
+     <p>Software</p>
+    </li>
+    <li>
+     <p>Lenguaje de programación</p>
+    </li>
+    <li>
+     <p>Lenguaje de máquina</p>
+    </li>
+    <li>
+     <p>Código fuente</p>
+    </li>
+    <li>
+     <p>Compilar</p>
+    </li>
+    <li>
+     <p>Compilador</p>
+    </li>
+    <li>
+     <p>Intérprete</p>
+    </li>
+    <li>
+     <p>Algoritmo</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">5. Conceptos básicos</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se introduce el concepto de algoritmo y la estructura que una
+  computadora necesita para implementarlo. Se finaliza con un pequeño programa.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m05textos/mAmotherboard.html"><dfn>Tarjeta madre</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mBmemoria.html"><dfn>Memoria</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mCcpu.html"><dfn>CPU</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mDentrada.html"><dfn>Dispositivo de entrada</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mEsalida.html"><dfn>Dispositivo de salida</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mFentradaSalida.html"><dfn>Dispositivo de entrada y salida</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mGcaracter.html"><dfn>Caracter</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mHtexto.html">Cadena de texto</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mIcodificacion.html"><dfn>Codificación</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05textos/mJresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. <dfn>Tarjeta madre</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Tarjeta en el interior de una computadora sobre la cual están colocados
+    los componentes que realizan el procesamiento de programas.
+   </p>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-rfstudio-3825581-640.webp"
+     media="(max-width: 640px)">
+   <img alt="Tarjeta madre dentro del chasis de una computadora"
+     src="/img/m02Conceptos/pexels-rfstudio-3825581-1920.webp">
+  </picture>
+  <figcaption>
+   <small>
+    <a href="https://www.pexels.com/es-es/foto/tecnico-de-cultivos-comprobando-los-contactos-en-la-placa-base-en-el-taller-3825581/"
+      target="_blank" rel="noopener">Foto de <strong>RF._.studio</strong> en
+     <strong>Pexels</strong></a>
+   </small>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >B. <dfn>Memoria</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Almacena todo lo que usa la una computadora para ejecutar un algoritmo:
+   </p>
+   <ul>
+    <li>
+     <p>Programas</p>
+    </li>
+    <li>
+     <p>Datos</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-valentine-tanasovich-2588757-640.webp"
+     media="(max-width: 640px)">
+   <img class="med" alt="Memoria montada en tarjeta madre"
+     src="/img/m02Conceptos/pexels-valentine-tanasovich-2588757-640.webp">
+  </picture>
+  <figcaption>
+   <a href="https://www.pexels.com/es-es/foto/placa-base-de-computadora-negra-y-gris-2588757/"
+     target="_blank" rel="noopener">Foto de <strong>Valentine
+     Tanasovich</strong> en <strong>Pexels</strong></a>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >C. <dfn>CPU</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Acrónimo del termino en inglés
+    <dfn>Central Processing Unit</dfn>,
+    que se traduce al español como
+    <dfn>Unidad Central de Procesamiento</dfn>
+    y es la parte de la computadora encargada de ejecutar los algoritmos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Utiliza un par de señales eléctricas, conocidas como
+    <dfn>1</dfn>
+    y
+    <dfn>0</dfn>
+    para representar y procesar los algoritmos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las instrucciones del algoritmo deben estar cargadas en la memoria de la
+    computadora para poder ejecutarse.
+   </p>
+  </li>
+  <li>
+   <p>
+    Puede usar datos, que también se almacenan en la memoria de la
+    computadora.
+   </p>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-pok-rie-1432673-640.webp"
+     media="(max-width: 640px)">
+   <img class="med" alt="CPU montado en tarjeta madre"
+     src="/img/m02Conceptos/pexels-pok-rie-1432673-1920.webp">
+  </picture>
+  <figcaption>
+   <a href="https://www.pexels.com/es-es/foto/fotografia-de-enfoque-selectivo-de-la-placa-base-1432673/"
+     target="_blank" rel="noopener">Foto de <strong>Pok Rie</strong> en
+    <strong>Pexels</strong></a>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >D. <dfn>Dispositivo de entrada</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Componente eléctrico o electromecánico colocado dentro o fuera de una
+    computadora, que le que permite recibir datos del exterior; por ejemplo:
+   </p>
+   <ul>
+    <li>
+     <p>Teclado</p>
+    </li>
+    <li>
+     <p>Mouse y touch pad</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-lex-photography-1109543-640.webp"
+     media="(max-width: 640px)">
+   <img class="med" alt="Teclado y ratón"
+     src="/img/m02Conceptos/pexels-lex-photography-1109543-1920.webp">
+  </picture>
+  <figcaption>
+   <small>
+    <a href="https://www.pexels.com/es-es/foto/teclado-magico-plateado-1109543/"
+      target="_blank" rel="noopener">Foto de <strong>Lex Photography</strong>
+     en <strong>Pexels</strong></a>
+   </small>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >E. <dfn>Dispositivo de salida</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Componente eléctrico o electromecánico colocado dentro o fuera de una
+    computadora, que le que permite enviar datos al exterior; por ejemplo:
+   </p>
+   <ul>
+    <li>
+     <p>Tareta de video y pantalla</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+ <figure>
+  <picture>
+   <source
+     srcset="/img/m02Conceptos/pexels-tranmautritam-326514-640.webp"
+     media="(max-width: 640px)">
+   <img class="med" alt="Monitor"
+     src="/img/m02Conceptos/pexels-tranmautritam-326514-1920.webp">
+  </picture>
+  <figcaption>
+   <small>
+    <a href="https://www.pexels.com/es-es/foto/disparo-de-fotograma-completo-de-la-computadora-326514/"
+      target="_blank" rel="noopener">Foto de <strong>Tranmautritam</strong> en
+     <strong>Pexels</strong></a>
+   </small>
+  </figcaption>
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >F. <dfn>Dispositivo de entrada y salida</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Componente eléctrico o electromecánico colocado dentro o fuera
+    de una computadora, que le permite enviar datos al exterior y recibir datos
+    del exterior; por ejemplo:
+   </p>
+   <ul>
+    <li>
+     <p>Pantallas touch</p>
+    </li>
+    <li>
+     <p>Discos duros</p>
+    </li>
+    <li>
+     <p>Controladores de USB</p>
+    </li>
+    <li>
+     <p>Controladores de red Ethernet o WiFI</p>
+    </li>
+   </ul>
+   <figure>
+    <picture>
+     <source
+       srcset="/img/m02Conceptos/pexels-marek-levak-2265482-640.webp"
+       media="(max-width: 640px)">
+     <img class="med" alt="Monitor"
+       src="/img/m02Conceptos/pexels-marek-levak-2265482-1920.webp">
+    </picture>
+    <figcaption>
+     <small>
+      <a href="https://www.pexels.com/es-es/foto/mujer-sentada-junto-a-la-mesa-mientras-usa-el-i-pad-2265482/"
+        target="_blank" rel="noopener">Foto de <strong>Marek Levak</strong>
+       en <strong>Pexels</strong></a>
+     </small>
+    </figcaption>
+   </figure>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >G. <dfn>Caracter</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Símbolo de comunicación escrita; por ejemplo:
+   </p>
+   <dl>
+    <dt>letras</dt>
+    <dd>
+     <p>a, b o C</p>
+    </dd>
+    <dt>dígitos</dt>
+    <dd>
+     <p>1, 2 o 5</p>
+    </dd>
+    <dt>signos de puntuación</dt>
+    <dd>
+     <p>%, $ o !</p>
+    </dd>
+    <dt>emojis</dt>
+    <dd>
+     <p>😎, 🎸 o 🤸‍♀️</p>
+    </dd>.
+   </dl>
+  </li>
+  <li>
+   <p>
+    En computación a cada uno de los símbolos anteriores se les considera un
+    <dfn>eslabón</dfn>.
+   </p>
+   <figure>
+    <img alt="Un eslabón" src="/img/m02Conceptos/Eslabon.svg" height="50">
+    <figcaption>Un eslabón</figcaption>
+   </figure>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >H. Cadena de texto</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Para formar un texto juntamos caracteres. Si consideramos a un caracter
+    como un eslabón, al juntarlos obtenemos una
+    <dfn>cadena de texto</dfn>.
+   </p>
+   <figure>
+    <img alt="Una cadena" src="/img/m02Conceptos/Cadena.svg" height="50">
+    <figcaption>Una cadena de eslabones</figcaption>
+   </figure>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. <dfn>Codificación</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Es la implementación en bits de un dato.
+   </p>
+  </li>
+  <li>
+   <p>
+    A cada caracter del texto se le asigna una combinación
+    de varios 1 y 0. La combinación se puede expresar como un número.
+   </p>
+  </li>
+  <li>
+   <p>
+    JavaScript usa la codificación UTF-16 de <dfn>Unicode</dfn>, que está
+    definida en
+    <a href="https://unicode.org" target="_blank"
+      rel="noopener">https://unicode.org</a>.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >J. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se definieron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>Algoritmo</p>
+    </li>
+    <li>
+     <p>Tarjeta madre</p>
+    </li>
+    <li>
+     <p>Memoria</p>
+    </li>
+    <li>
+     <p>CPU</p>
+    </li>
+    <li>
+     <p>Dispositivos de entrada y salida</p>
+    </li>
+    <li>
+     <p>JavaScript</p>
+    </li>
+    <li>
+     <p>Textos</p>
+    </li>
+    <li>
+     <p>El tipo <code class="language-javascript">string</code></p>
+    </li>
+    <li>
+     <p>El método <code class="language-javascript">console.log</code></p>
+    </li>
+    <li>
+     <p>El orden de ejecución de instrucciones</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">6. Números</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presenta un resumen de la historia de los numeros.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m06numeros/mAnaturales.html">Los números naturales (&naturals;)</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mBsuma.html">La suma</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mCmultiplicacion.html">La multiplicación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mDenteros.html">Los números enteros (&integers;)</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mEracionales.html">Los números racionales (&rationals;)</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mFirracionales.html">Los números irracionales</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mGrarezas.html">Rarezas matemáticas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mHgodel.html">Los teoremas de Gödel</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mInumber.html">El tipo de dato <dfn><code class="language-javascript">number</code></dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mJresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Los números naturales (&naturals;)</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Son los números que usamos para contar.</p>
+  </li>
+  <li>
+   <p>
+    Para saber en que grupo hay más elementos, se pueden comparar entre sí.
+    (Los matemáticos le dicen coordinar.)
+   </p>
+   <p>🍓🍓🍓🍓🍓<br>👼👼👼</p>
+  </li>
+  <li>
+   <p>También se pueden contar con los dedos</p>
+   <table>
+    <tr>
+     <td>🍓</td>
+     <td>🍓</td>
+     <td>🍓</td>
+     <td>🍓</td>
+     <td>🍓</td>
+    </tr>
+    <tr>
+     <td>I</td>
+     <td>I</td>
+     <td>I</td>
+     <td>I</td>
+     <td>/</td>
+    </tr>
+   </table>
+  </li>
+  <li>
+   <p>En romano, los números representan lo siguiente:</p>
+   <dl>
+    <dt>Ⅰ</dt>
+    <dd>Un dedo, número 1.</dd>
+    <dt>Ⅴ</dt>
+    <dd>Una mano, 5 dedos, número 5.</dd>
+    <dt>Ⅹ</dt>
+    <dd>2 manos, 10 dedos, número 10.</dd>
+   </dl>
+  </li>
+  <li>
+   <p>
+    Los mayas, al tener los dedos de los pies descubiertos, podian contar
+    hasta
+    el 20. Por eso su sistema numérico es de base 20.
+   </p>
+  </li>
+  <li>
+   <p>
+    En Sumeria contaban con las 3 falanges de cada dedo, lo cual nos permite
+    contar hasta 15 con cada dedo. Si consideramos los pies, podemos contar
+    hasta 60. Por eso su sistema numérico es de base 60.
+   </p>
+   <pre>I I I I
+I I I I
+I I I I  /
+        /
+       /
+   </pre>
+  </li>
+  <li>
+   <p>Con el tiempo se prefirió el uso de ábacos.</p>
+   <figure>
+    <picture>
+     <source srcset="/img/m17numeros/pexels-tara-winstead-6692937-640.webp"
+       media="(max-width: 640px)">
+     <img alt="Imagen de un ábaco"
+       src="/img/m17numeros/pexels-tara-winstead-6692937-1920.webp">
+    </picture>
+    <figcaption>
+     <a href="https://www.pexels.com/es-es/foto/jugando-nino-alfombra-adentro-6692937/"
+       target="_blank" rel="noopener">Foto de <strong>Tara Winstead</strong>
+      en <strong>Pexels</strong></a>
+    </figcaption>
+   </figure>
+  </li>
+ </ul>
+ <section>
+  <h1>El Cero (0)</h1>
+  <ul>
+   <li>
+    <p>
+     Un número que no fué usado desde el inicio es el cero, que representa el
+     concepto de nada.
+    </p>
+   </li>
+   <li>
+    <p>En América los mayas y en Asia, tanto indios como chinos usaban el 0.</p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>En matemáticas</h1>
+  <ul>
+   <li>
+    <p>Para los matemáticos el número base es el 0.</p>
+   </li>
+   <li>
+    <p>
+     El 1 se forma agregando una piedrita al 0, obteniendo 0'. A la piedrita se
+     le llama operador sucesor; o sea que el 1 (0') es el sucesor de 0.
+    </p>
+   </li>
+   <li>
+    <p>
+     El 2 se forma agregando una piedrita al 1, obteniendo 0''.
+    </p>
+   </li>
+   <li>
+    <p>
+     Agregando piedritas generamos todos los números naturales.
+    </p>
+   </li>
+   <li>
+    <p>
+     Los números naturales (&naturals;) se pueden expresar en diferentes
+     sistemas de numeración.
+    </p>
+    <dl>
+     <dt>Usando sucesores</dt>
+     <dd>
+      <p>0, 0', 0'', 0''', 0'''', ...</p>
+     </dd>
+     <dt>Notación binaria</dt>
+     <dd>
+      <p>0, 1, 10, 11, 100, ...</p>
+     </dd>
+     <dt>Notación decimal</dt>
+     <dd>
+      <p>0, 1, 2, 3, 4, ..., 9, 10 , 11, ...</p>
+     </dd>
+     <dt>Notación hexadecimal</dt>
+     <dd>
+      <p>0, 1, 2, 3, 4, ..., 9, A, B, ..., E, F, 10, 11, ..., 1F, 20, ...</p>
+     </dd>
+    </dl>
+   </li>
+   <li>
+    <p>
+     Todas las notaciones funcionan de manera parecida, pero cuando se usan,
+     cada una tiene características que la hacen diferente a las otras.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >B. La suma</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    🍔🍔+🍔 === 🍔🍔🍔
+   </p>
+  </li>
+  <li>
+   <p>
+    🍕🍕 + 🍕 === 🍕🍕🍕
+   </p>
+  </li>
+  <li>
+   <p>
+    I I + I === I I I
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>En matemáticas</h1>
+  <ul>
+   <li>
+    <p>0 + b = b</p>
+   </li>
+   <li>
+    <p>a' + b = (a + b)'</p>
+   </li>
+   <li>
+    <p>0 + 3 = 3</p>
+   </li>
+   <li>
+    <p>1 + 3 = (0 + 3)' = 3' = 4</p>
+   </li>
+   <li>
+    <p>2 + 3 = (1 + 3)' = 4' = 5</p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >C. La multiplicación</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Fabrico 🎈🎈🎈🎈 en un día ¿Cuantos en 3 días?
+   </p>
+  </li>
+  <li>
+   <pre>🎈🎈🎈🎈  🎈🎈🎈🎈 🎈🎈🎈🎈  === 12
+   4    +    4   +    4  (suma 4, 3 veces)
+         4 * 3</pre>
+  </li>
+ </ul>
+ <section>
+  <h1>En matemáticas</h1>
+  <ul>
+   <li>
+    <p>(a)(0) = 0</p>
+   </li>
+   <li>
+    <p>(a)(b') = ((a)(b)) + a</p>
+   </li>
+   <li>
+    <p>(2)(0) = 0</p>
+   </li>
+   <li>
+    <p>(2)(1) = ((2)(0)) + 2 = 0 + 2 = 2</p>
+   </li>
+   <li>
+    <p>(2)(2) = ((2)(1)) + 2 = 2 + 2 = 4</p>
+   </li>
+   <li>
+    <p>(2)(3) = ((2)(2)) + 2 = 4 + 2 = 6</p>
+   </li>
+   <li>
+    <p>
+     Hasta aquí todos eran felices 😁, pero hubo algo que les partió el corazón
+     😢.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >D. Los números enteros (&integers;)</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Alguien se dió cuenta que los números podían tener 2 direcciones. Por
+    ejemplo, si un número significa un avance, si voy en sentido contrario,
+    hay
+    un retroceso. Con esto aparece la resta al disminuír, y los números
+    negativos al restar un número más grande.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si tengo 🍔🍔🍔🍔🍔 y le voy a dar de comer 1 a cada 😋😋😋 me quedan
+    🍔🍔. O sea, 5 - 3 === 2
+   </p>
+  </li>
+  <li>
+   <p>
+    Si tengo 🍔🍔🍔 y le voy a dar de comer 1 a cada 😋😋😋 me quedan 0. O
+    sea, 3 - 3 === 0
+   </p>
+  </li>
+  <li>
+   <p>
+    Si tengo 🍔🍔🍔 y le voy a dar de comer 1 a cada 😋😋😋😋 quedo
+    debiendo 🍔. O sea 3 - 4 === -1.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si a + b = c, entonces a = c - b. De esta forma se define la resta, como
+    la operación contraria a la suma.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los matemáticos se repusieron 😁, pero posteriormente hubo algo que les
+    partió el corazón 😢.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >E. Los números racionales (&rationals;)</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Repartir 🎈🎈🎈🎈 🎈🎈🎈🎈 🎈🎈🎈🎈 entre 👼👼👼 para que a todos les
+    toque lo mismo.
+   </p>
+  </li>
+  <li>
+   <p>👼 🎈🎈🎈🎈<br>👼 🎈🎈🎈🎈<br>👼 🎈🎈🎈🎈</p>
+  </li>
+  <li>
+   <p>O sea 12/3 === 4</p>
+  </li>
+  <li>
+   <p>
+    Si repartimos 12 entre 3 dándole la misma cantidad a todos, a cada uno le
+    tocan 4.
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>División entera y residuo</h1>
+  <ul>
+   <li>
+    <p>
+     Repartir 🎈🎈🎈🎈 🎈🎈🎈🎈 🎈🎈🎈 entre 👼👼👼 para que a todos les
+     toque lo mismo.
+    </p>
+   </li>
+   <li>
+    <p>👼 🎈🎈🎈<br>👼 🎈🎈🎈<br>👼 🎈🎈🎈<br>y 🎈🎈 no se reparten.</p>
+   </li>
+   <li>
+    <p>11 div 3 === 3.</p>
+   </li>
+   <li>
+    <p>11 % 3 === 2.</p>
+   </li>
+   <li>
+    <p>Si a = ((b)(c)) + d, con 0 ≤ d &lt; c, a div c = b. Al resultado se
+     le conoce como <dfn>cociente</dfn> o <dfn>división entera</dfn>.</p>
+    <p>Como 11 = ((3)(3)) + 2 y 0 ≤ 2 &lt; 3, 11 div 3 = 3.</p>
+   </li>
+   <li>
+    <p>
+     Si a = ((b)(c)) + d, con 0 ≤ d &lt; c, a % c = d. Al resultado se le
+     conoce como <dfn>módulo</dfn> o como <dfn>residuo</dfn>.
+    </p>
+    <p>Como 11 = 3 * 3 + 2, y 0 ≤ 2 &lt; 3, 11 % 3 = 2 </p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>División exacta</h1>
+  <ul>
+   <li>
+    <p>
+     Repartir 🎈🎈🎈🎈 🎈🎈🎈🎈 🎈🎈🎈 entre 👼👼👼 para que a todos les
+     toque lo mismo, pero que no sobre nada.
+    </p>
+   </li>
+   <li>
+    <p>
+     A cada 👼 le tocan 🎈🎈🎈 y tenemos que partir los 🎈🎈 que sobran de tal
+     forma que todos les toque la misma cantidad de 🎈.
+    </p>
+   </li>
+   <li>
+    <p>
+     11 / 3 === (9/3) + (2/3) === 3+(2/3). A cada 👼 le tocan 🎈🎈🎈 y 2
+     partes de lo que resulta de partir 🎈 en 3 pedazos iguales.
+    </p>
+   </li>
+   <li>
+    <p>
+     2/3 se puede expresar con decimales, obteniendo 0.6666... con el número 6
+     repitiéndose, sin parar. A la parte que se repite se le llama periodo.
+    </p>
+   </li>
+   <li>
+    <p>
+     Por lo mismo, 11/3 también se puede expresar como 3.666... o 3.(6),
+     poniendo entre paréntesis el periodo.
+    </p>
+   </li>
+   <li>
+    <p>Si (a)(b) = c, entonces c/b = a.</p>
+   </li>
+   <li>
+    <p>
+     Se pensaba que todos los números se podían expresar como fracciones o
+     como números periódicos. Hasta aquí todos eran felices 😁, pero hubo
+     algo que les rompió el corazón 😢.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >F. Los números irracionales</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Algunos campesinos que necesitaban calcular el número de semillas que
+    necesitaban para sembrar sus campos. Para simplificar su trabajo,
+    dividian el campo en triángulos, pues había fórmulas para calcular el
+    área de un triángulo. A partir de aquí se desarrolló la trigonometría.
+   </p>
+   <figure>
+    <img alt="Cálculo de área con triángulos"
+      src="/img/m17numeros/octogono-irregular-area.webp">
+    <figcaption>Cálculo de área con triángulos.</figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    Otros los hicieron con rectángulos. A partir de aquí se desarrolló el
+    cálculo diferencial e integral.
+   </p>
+   <figure>
+    <img alt="Cálculo de área con rectángulos"
+      src="/img/m17numeros/figura-1.-rectc3a1ngulos-inscritos.webp">
+    <figcaption>Cálculo de áre con rectángulos.</figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    Al estudiar los triángulos descubrieron que en los triángulos
+    rectángulos, la suma de los cuadrados de cada cateto es igual al cuadrado
+    de la hipotenusa.
+   </p>
+  </li>
+  <li>
+   <p>
+    Aunque este resultado se obtuvo en la antigua Babilonia (hoy Irak), llega
+    a nosotros por medio de la escuela pitagórica de hace mucho, pero mucho
+    tiempo, en lo que hoy es Grecia.
+   </p>
+  </li>
+  <li>
+   <p>
+    En el siguiente triángulo, a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>.
+   </p>
+   <figure>
+    <img alt="Teorema de pitágoras"
+      src="/img/m17numeros/Pythagorean_right_angle.svg">
+    <figcaption>De <a
+       href="//commons.wikimedia.org/wiki/User:Marianov"
+       title="User:Marianov">Marianov</a> - <span
+       class="int-own-work" lang="es">Trabajo
+      propio</span>, <a
+       href="http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+       title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a
+       href="https://commons.wikimedia.org/w/index.php?curid=42125657">Enlace</a>
+    </figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    La operación a<sup>2</sup> = (a)(a). Por ejemplo,
+    3<sup>2</sup> = (3)(3) = 9.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para poder obtener el valor de la hipotenusa, se desarrolló la raíz
+    cuadrada, de tal forma que si a<sup>2</sup> = b, entonces a = √b.
+   </p>
+  </li>
+  <li>
+   <p>Se sabía que si a y b valen 1, el valor de c es √2.</p>
+  </li>
+  <li>
+   <p>
+    Un miembro de la escuela pitagórica se dió cuenta de que √2 no se puede
+    expresar como número racional; su escuela tenía como dogma que el
+    Universo era perfecto y todo se podía expresar como números racionales. El
+    descubridor murió; unos dicen que se suicidó y otros dicen que lo
+    suicidaron en su escuela y sus miembros fingieron felicidad 🙄, aunque
+    tenían el corazón partido 😢 y ocultaron este resultado al mundo 🤬, pero
+    con el paso del tiempo todo el mundo se enteró de este resultado y no le
+    importó.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los matemáticos volvieron a ser felices 😁, pero hubo algo que les rompió
+    el corazón 😢.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >G. Rarezas matemáticas</h1><div class="lectura">
+ <section>
+  <h1>0 / 0</h1>
+  <ul>
+   <li>
+    <p>El resultado de 0/0. De la fórmula, se requiere que (a)(0) = 0.</p>
+   </li>
+   <li>
+    <p>(0)(0) = 0.</p>
+   </li>
+   <li>
+    <p>(1)(0) = 0.</p>
+   </li>
+   <li>
+    <p>(-233.45)(0) = 0.</p>
+   </li>
+   <li>
+    <p>
+     No existe un resultado único; el número que se te ocurra es una solución
+     🤪.
+    </p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>√-1</h1>
+  <ul>
+   <li>
+    <p>
+     El resultado de √-1. De la fórmula, se requiere que a<sup>2</sup> = -1. O
+     sea que (a)(a) = -1; pero por la regla de los signos el resultado no se
+     puede cumplir (-1)(-1) = 1 y (1)(1) = 1. 😵
+    </p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Paradojas lógicas</h1>
+  <ul>
+   <li>
+    <p>
+     Los matemáticos observaron que las matemáticas llevaban a contradicciones
+     lógicas y se les partió el corazón 😢, pero pensaban que se podían
+     corregir. A finales del siglo XIX hicieron un concurso que se llamaba
+     Metamatemáticas, donde se le iba a dar mucho dinero 💵 a quien pudiera
+     hacer una formulación de las matemáticas que no tuviera errores.
+    </p>
+   </li>
+   <li>
+    <p>
+     Los matemáticos tenían entonces la esperanza de ser felices 🙃, pero hubo
+     algo que les rompió el corazón 😭.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >H. Los teoremas de Gödel</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Kurt Gödel demostró en los años 30 del siglo XX que aquellas matemáticas
+    que razonen usando al menos los números naturales, tienen uno de 2
+    problemas.
+   </p>
+   <dl>
+    <dt>Contradicción</dt>
+    <dd>
+     <p>
+      Hay algunas cosas que se puede demostrar que son falsas, pero también se
+      puede demostrar que son verdaderas 😡.
+     </p>
+    </dd>
+    <dt>Incompletez</dt>
+    <dd>
+     <p>
+      Hay algunas cosas que no se puede demostrar si son verdaderas o son
+      falsas 🙁.
+     </p>
+    </dd>
+   </dl>
+   <figure>
+    <img alt="Foto de Kurt Gödel"
+      src="/img/m17numeros/571px-Kurt-godel1.webp">
+    <figcaption>
+     De <a target="_blank" rel="noopener"
+       href="//commons.wikimedia.org/w/index.php?title=User:Kedumuc10&amp;amp;action=edit&amp;amp;redlink=1"
+       class="new"
+       title="User:Kedumuc10 (page does not exist)">;Kedumuc10</a>; - <span
+       class="int-own-work" lang="es">;Trabajo
+      propio</span>;, <a target="_blank" rel="noopener"
+       href="https://creativecommons.org/licenses/by-sa/4.0"
+       title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>,
+     <a target="_blank" rel="noopener"
+       href="https://commons.wikimedia.org/w/index.php?curid=49253794">Enlace</a>
+    </figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    Otro de los problemas es que no se sabe cual es el problema hasta que te
+    explota en la cara y que si ya encontraste el problema y lo arreglas,
+    aparecerá otro problema de incompletez o de contradicción, pero una vez
+    más no lo puedes detectar hasta que te explota en la cara.
+   </p>
+  </li>
+  <li>
+   <p>
+    Aquí los matemáticos se volvieron infelices 😭. Algunos pretendieron que
+    estos teoremas nunca existieron. Otros lo ocultaron. Otros pretendieron
+    demostrar que el señor Gödel estaba mal.
+   </p>
+  </li>
+  <li>
+   <p>
+    Lo que se consiguió fué demostrar de muchas formas que los teoremas de
+    Gödel estaban bien, pero se pudo encontrar una salida: no usar conjuntos
+    infinitos como los números naturales, enteros, racionales o reales 😜.
+   </p>
+  </li>
+  <li>
+   <p>
+    Empezaron los estudios que llevaron a la Teoría Matemática de la
+    Computación, a las computadoras, los videojuegos, las redes sociales,
+    teniendo también la satisfacción de saber que las matemáticas con las que
+    tanto nos torturaron en la escuela están dañadas y nunca las podrán
+    arreglar. ¡Ja!¡Ja!¡Ja! 🤣🤣😂😈.
+   </p>
+  </li>
+  <li>
+   <p>
+    Esto no quiere decir que las matemáticas no sirvan, pero tienen unas
+    sorpresitas para los que las quieran usar. Úselas bajo su riesgo.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. El tipo de dato <dfn><code class="language-javascript">number</code></dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Representa números en JavaScript.</p>
+  </li>
+  <li>
+   <p>
+    Como la cantidad de números reales definidos por las matemáticas es infinita
+    en muchos sentidos y no se puede implementar en una computadora. La cantidad
+    números es infinita porque no tiene límite para los números positivos y
+    negativos, pero además entre 2 números hay una cantidad infinita de números.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para poder usar algo parecido a los números reales, necesitamos un modelo
+    que sea totalmente finito en cuanto a la cantidad total de números y la
+    cantidad de números entre 2 números.
+   </p>
+  </li>
+  <li>
+   <p>
+    En JavaScript se usa el estándar
+    <dfn>IEEE 754</dfn>
+    y en realidad son límites.
+   </p>
+  </li>
+  <li>
+   <p>
+    Un <dfn>límite</dfn> es un número que se representa a sí mismo, a
+    números ligeramente menores y ligeramente mayores; por ejemplo,
+    <code class="language-javascript">1.0</code>
+    representa a
+    <code class="language-javascript">1.0</code>,
+    así como números muy cercanos,
+    como podrían ser
+    <code class="language-javascript">1.000000000000000000000001</code>,
+    <code class="language-javascript">1.000000000000000000000002</code>,
+    <code class="language-javascript">0.999999999999999999999999</code>
+    o
+    <code class="language-javascript">0.999999999999999999999998</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Incluyen a los números enteros como
+    <code class="language-javascript">1</code>,
+    <code class="language-javascript">2</code>,
+    <code class="language-javascript">101</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El valor <code class="language-javascript">0</code> representa a los números
+    cercanos a 0, ya sean positivos o negativos.
+   </p>
+  </li>
+  <li>
+   <p>
+    El valor <code class="language-javascript">+0</code> representa a los
+    números positivos cercanos a 0.
+   </p>
+  </li>
+  <li>
+   <p>
+    El valor <code class="language-javascript">-0</code> representa a los
+    números negativos cercanos a 0.
+   </p>
+  </li>
+  <li>
+   <p>
+    El valor
+    <code class="language-javascript">NaN</code>
+    representa valores que no son un número; por ejemplo, los resultados
+    de
+    <code class="language-javascript">0 / 0</code>
+    y
+    <code class="language-javascript">Math.sqrt(-1)</code>
+    (la raíz cuadrada de -1).
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>Temas por Investigar</h1>
+  <ul>
+   <li>
+    <p>Representación de números en notación científica.</p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >J. Resumen</h1><div class="lectura">
+ <p>Se revisó la forma en que se formulan:</p>
+ <ul>
+   <li>
+     <p>Los números naturales.</p>
+   </li>
+   <li>
+     <p>Los números enteros.</p>
+   </li>
+   <li>
+     <p>Los números racionales.</p>
+   </li>
+   <li>
+     <p>Los números irracionales.</p>
+   </li>
+   <li>
+     <p>Rarezas matemáticas.</p>
+   </li>
+   <li>
+     <p>Los teoremas de Gödel.</p>
+   </li>
+   <li>
+     <p>El tipo de dato <code class=\"language-javascript\">number</code>.</p>
+   </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">7. Aplicaciones nativas y multiplataforma</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presenta el concepto de las app nativas y multiplataforma.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m07nativas/mAnativa.html"><dfn>App nativa</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/mBmultiplataforma.html"><dfn>App multiplataforma</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/mCdiferencias.html">Diferencias entre app nativa y app multiplataforma</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/mDventajasNativas.html">Ventajas de las app nativas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/mEdesventajasNativas.html">Desventajas de las app nativas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/mFventajasMultiplataforma.html">Ventajas de las app multiplataforma</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/mGdesventajasMultiplataforma.html">Desventajas de las app multiplataforma</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/mHusoNativas.html">Uso de las app nativas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07nativas/mIusoMulti.html">Uso de las app multiplataforma</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. <dfn>App nativa</dfn></h1><div class="lectura">
+ <p>
+  App desarrollada específicamente para una plataforma de cómputo.
+ </p>
+ <section>
+  <h1>Ejemplos de Plataformas</h1>
+  <ul>
+   <li>Web</li>
+   <li>Android</li>
+   <li>Windows</li>
+   <li>iOS (iPad y iPhone)</li>
+   <li>MacOS</li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >B. <dfn>App multiplataforma</dfn></h1><div class="lectura">
+ <p>
+  App diseñada para ejecutarse en diferentes plataformas.
+ </p>
+ <section>
+  <h1>Tecnologías Multiplataforma</h1>
+  <ul>
+   <li>Progressive Web Application (PWA)</li>
+   <li>Cordova</li>
+   <li>Native Script</li>
+   <li>Ionic</li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >C. Diferencias entre app nativa y app multiplataforma</h1><div class="lectura">
+ <table class="borde">
+  <thead>
+   <tr>
+    <th>App Nativa</th>
+    <th>App Multiplataforma</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>1 código por plataforma. (Posiblemente en distintos lenguajes.)</td>
+    <td>1 código único para todas las plataformas.</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+      </section>
+     <section >
+         <h1 >D. Ventajas de las app nativas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Permiten que la experiencia de usuario se integre mejor al uso de la
+    plataforma.
+   </p>
+  </li>
+  <li>
+   <p>Mejor rendimiento.</p>
+  </li>
+  <li>
+   <p>Sacan mejor provecho a las características de la plataforma.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >E. Desventajas de las app nativas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Requieren un equipo de desarrollo con más conocimientos.</p>
+  </li>
+  <li>
+   <p>Hay que desarrollar y dar mantenimiento a más código.</p>
+  </li>
+  <li>
+   <p>Más caro.</p>
+  </li>
+  <li>
+   <p>Más tiempo para desarrollar.</p>
+  </li>
+  <li>
+   <p>Forma de trabajo más complicada.</p>
+  </li>
+  <li>
+   <p>Software que requiere más recursos de hardware.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >F. Ventajas de las app multiplataforma</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>1 solo código.</p>
+  </li>
+  <li>
+   <p>Menor tiempo de desarrollo.</p>
+  </li>
+  <li>
+   <p>Desarrollo más barato.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >G. Desventajas de las app multiplataforma</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Menor rendimiento.</p>
+  </li>
+  <li>
+   <p>Se integran menos con el sistem operativo.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >H. Uso de las app nativas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Cuando el rendimiento sea un problema.</p>
+  </li>
+  <li>
+   <p>Cuando el tiempo para desarrollar no esté limitado.</p>
+  </li>
+  <li>
+   <p>
+    Cuando se cuente con suficiente dinero para pagar un equipo de trabajo
+    muy capacitado, un hardware más caro y una forma de trabajo complicada.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. Uso de las app multiplataforma</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Cuando el rendimiento no sea un problema.</p>
+  </li>
+  <li>
+   <p>Cuando no se cuente con mucho dinero para desarrollar.</p>
+  </li>
+  <li>
+   <p>Cuando el tiempo para desarrollar sea una limitante.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+</body>
+</html>

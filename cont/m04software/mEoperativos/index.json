@@ -1,0 +1,32 @@
+{
+ "title": "Ejemplos de sistemas operativos",
+ "description": "Lista de algunos ejemplos de sistemas operativos.",
+ "printDescription": "Página para imprimir fotografías de ejemplos de sistemas operativos.",
+ "listado": [
+  {
+   "name": "m1android.html",
+   "title": "Android",
+   "description": "Fotografía de Android."
+  },
+  {
+   "name": "m2windows.html",
+   "title": "Windows",
+   "description": "Fotografía de Windows."
+  },
+  {
+   "name": "m3ios.html",
+   "title": "iOS",
+   "description": "Fotografía de iOS."
+  },
+  {
+   "name": "m4macos.html",
+   "title": "macOS",
+   "description": "Fotografía de macOS."
+  },
+  {
+   "name": "m5linux.html",
+   "title": "Linux",
+   "description": "Fotografía de Linux."
+  }
+ ]
+}

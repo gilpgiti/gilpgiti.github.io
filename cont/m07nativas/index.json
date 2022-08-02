@@ -1,0 +1,55 @@
+{
+ "type": "A",
+ "title": "Aplicaciones nativas y multiplataforma",
+ "description": "Contenido de la lección «3. Aplicaciones nativas y multiplataforma",
+ "printDescription": "Página para imprimir de la lección «3. Aplicaciones nativas y multiplataforma.",
+ "listado": [
+  {
+   "name": "mAnativa.html",
+   "title": "App nativa",
+   "h1": "<dfn>App nativa</dfn>",
+   "description": "Definición de app nativa."
+  },
+  {
+   "name": "mBmultiplataforma.html",
+   "title": "App multiplataforma",
+   "h1": "<dfn>App multiplataforma</dfn>",
+   "description": "Definición de app multiplataforma."
+  },
+  {
+   "name": "mCdiferencias.html",
+   "title": "Diferencias entre app nativa y app multiplataforma",
+   "description": "Diferencias entre app nativa y app multiplataforma."
+  },
+  {
+   "name": "mDventajasNativas.html",
+   "title": "Ventajas de las app nativas",
+   "description": "Ventajas de las app nativas."
+  },
+  {
+   "name": "mEdesventajasNativas.html",
+   "title": "Desventajas de las app nativas",
+   "description": "Desventajas de las app nativas."
+  },
+  {
+   "name": "mFventajasMultiplataforma.html",
+   "title": "Ventajas de las app multiplataforma",
+   "description": "Ventajas de las app multiplataforma."
+  },
+  {
+   "name": "mGdesventajasMultiplataforma.html",
+   "title": "Desventajas de las app multiplataforma",
+   "description": "Desventajas de las app multiplataforma."
+  },
+  {
+   "name": "mHusoNativas.html",
+   "title": "Uso de las app nativas",
+   "description": "Uso de las app nativas."
+  },
+  {
+   "name": "mIusoMulti.html",
+   "title": "Uso de las app multiplataforma",
+   "description": "Uso de las app multiplataforma."
+  }
+ ]
+}

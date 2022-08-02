@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Números - GilPG IJS</title>
+ <meta name="description" content="Página para imprimir de la lección «17. Números».">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">6. Números</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presenta un resumen de la historia de los numeros.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m06numeros/mAnaturales.html">Los números naturales (&naturals;)</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mBsuma.html">La suma</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mCmultiplicacion.html">La multiplicación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mDenteros.html">Los números enteros (&integers;)</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mEracionales.html">Los números racionales (&rationals;)</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mFirracionales.html">Los números irracionales</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mGrarezas.html">Rarezas matemáticas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mHgodel.html">Los teoremas de Gödel</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mInumber.html">El tipo de dato <dfn><code class="language-javascript">number</code></dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mJresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Los números naturales (&naturals;)</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Son los números que usamos para contar.</p>
+  </li>
+  <li>
+   <p>
+    Para saber en que grupo hay más elementos, se pueden comparar entre sí.
+    (Los matemáticos le dicen coordinar.)
+   </p>
+   <p>🍓🍓🍓🍓🍓<br>👼👼👼</p>
+  </li>
+  <li>
+   <p>También se pueden contar con los dedos</p>
+   <table>
+    <tr>
+     <td>🍓</td>
+     <td>🍓</td>
+     <td>🍓</td>
+     <td>🍓</td>
+     <td>🍓</td>
+    </tr>
+    <tr>
+     <td>I</td>
+     <td>I</td>
+     <td>I</td>
+     <td>I</td>
+     <td>/</td>
+    </tr>
+   </table>
+  </li>
+  <li>
+   <p>En romano, los números representan lo siguiente:</p>
+   <dl>
+    <dt>Ⅰ</dt>
+    <dd>Un dedo, número 1.</dd>
+    <dt>Ⅴ</dt>
+    <dd>Una mano, 5 dedos, número 5.</dd>
+    <dt>Ⅹ</dt>
+    <dd>2 manos, 10 dedos, número 10.</dd>
+   </dl>
+  </li>
+  <li>
+   <p>
+    Los mayas, al tener los dedos de los pies descubiertos, podian contar
+    hasta
+    el 20. Por eso su sistema numérico es de base 20.
+   </p>
+  </li>
+  <li>
+   <p>
+    En Sumeria contaban con las 3 falanges de cada dedo, lo cual nos permite
+    contar hasta 15 con cada dedo. Si consideramos los pies, podemos contar
+    hasta 60. Por eso su sistema numérico es de base 60.
+   </p>
+   <pre>I I I I
+I I I I
+I I I I  /
+        /
+       /
+   </pre>
+  </li>
+  <li>
+   <p>Con el tiempo se prefirió el uso de ábacos.</p>
+   <figure>
+    <picture>
+     <source srcset="/img/m17numeros/pexels-tara-winstead-6692937-640.webp"
+       media="(max-width: 640px)">
+     <img alt="Imagen de un ábaco"
+       src="/img/m17numeros/pexels-tara-winstead-6692937-1920.webp">
+    </picture>
+    <figcaption>
+     <a href="https://www.pexels.com/es-es/foto/jugando-nino-alfombra-adentro-6692937/"
+       target="_blank" rel="noopener">Foto de <strong>Tara Winstead</strong>
+      en <strong>Pexels</strong></a>
+    </figcaption>
+   </figure>
+  </li>
+ </ul>
+ <section>
+  <h1>El Cero (0)</h1>
+  <ul>
+   <li>
+    <p>
+     Un número que no fué usado desde el inicio es el cero, que representa el
+     concepto de nada.
+    </p>
+   </li>
+   <li>
+    <p>En América los mayas y en Asia, tanto indios como chinos usaban el 0.</p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>En matemáticas</h1>
+  <ul>
+   <li>
+    <p>Para los matemáticos el número base es el 0.</p>
+   </li>
+   <li>
+    <p>
+     El 1 se forma agregando una piedrita al 0, obteniendo 0'. A la piedrita se
+     le llama operador sucesor; o sea que el 1 (0') es el sucesor de 0.
+    </p>
+   </li>
+   <li>
+    <p>
+     El 2 se forma agregando una piedrita al 1, obteniendo 0''.
+    </p>
+   </li>
+   <li>
+    <p>
+     Agregando piedritas generamos todos los números naturales.
+    </p>
+   </li>
+   <li>
+    <p>
+     Los números naturales (&naturals;) se pueden expresar en diferentes
+     sistemas de numeración.
+    </p>
+    <dl>
+     <dt>Usando sucesores</dt>
+     <dd>
+      <p>0, 0', 0'', 0''', 0'''', ...</p>
+     </dd>
+     <dt>Notación binaria</dt>
+     <dd>
+      <p>0, 1, 10, 11, 100, ...</p>
+     </dd>
+     <dt>Notación decimal</dt>
+     <dd>
+      <p>0, 1, 2, 3, 4, ..., 9, 10 , 11, ...</p>
+     </dd>
+     <dt>Notación hexadecimal</dt>
+     <dd>
+      <p>0, 1, 2, 3, 4, ..., 9, A, B, ..., E, F, 10, 11, ..., 1F, 20, ...</p>
+     </dd>
+    </dl>
+   </li>
+   <li>
+    <p>
+     Todas las notaciones funcionan de manera parecida, pero cuando se usan,
+     cada una tiene características que la hacen diferente a las otras.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >B. La suma</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    🍔🍔+🍔 === 🍔🍔🍔
+   </p>
+  </li>
+  <li>
+   <p>
+    🍕🍕 + 🍕 === 🍕🍕🍕
+   </p>
+  </li>
+  <li>
+   <p>
+    I I + I === I I I
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>En matemáticas</h1>
+  <ul>
+   <li>
+    <p>0 + b = b</p>
+   </li>
+   <li>
+    <p>a' + b = (a + b)'</p>
+   </li>
+   <li>
+    <p>0 + 3 = 3</p>
+   </li>
+   <li>
+    <p>1 + 3 = (0 + 3)' = 3' = 4</p>
+   </li>
+   <li>
+    <p>2 + 3 = (1 + 3)' = 4' = 5</p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >C. La multiplicación</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Fabrico 🎈🎈🎈🎈 en un día ¿Cuantos en 3 días?
+   </p>
+  </li>
+  <li>
+   <pre>🎈🎈🎈🎈  🎈🎈🎈🎈 🎈🎈🎈🎈  === 12
+   4    +    4   +    4  (suma 4, 3 veces)
+         4 * 3</pre>
+  </li>
+ </ul>
+ <section>
+  <h1>En matemáticas</h1>
+  <ul>
+   <li>
+    <p>(a)(0) = 0</p>
+   </li>
+   <li>
+    <p>(a)(b') = ((a)(b)) + a</p>
+   </li>
+   <li>
+    <p>(2)(0) = 0</p>
+   </li>
+   <li>
+    <p>(2)(1) = ((2)(0)) + 2 = 0 + 2 = 2</p>
+   </li>
+   <li>
+    <p>(2)(2) = ((2)(1)) + 2 = 2 + 2 = 4</p>
+   </li>
+   <li>
+    <p>(2)(3) = ((2)(2)) + 2 = 4 + 2 = 6</p>
+   </li>
+   <li>
+    <p>
+     Hasta aquí todos eran felices 😁, pero hubo algo que les partió el corazón
+     😢.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >D. Los números enteros (&integers;)</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Alguien se dió cuenta que los números podían tener 2 direcciones. Por
+    ejemplo, si un número significa un avance, si voy en sentido contrario,
+    hay
+    un retroceso. Con esto aparece la resta al disminuír, y los números
+    negativos al restar un número más grande.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si tengo 🍔🍔🍔🍔🍔 y le voy a dar de comer 1 a cada 😋😋😋 me quedan
+    🍔🍔. O sea, 5 - 3 === 2
+   </p>
+  </li>
+  <li>
+   <p>
+    Si tengo 🍔🍔🍔 y le voy a dar de comer 1 a cada 😋😋😋 me quedan 0. O
+    sea, 3 - 3 === 0
+   </p>
+  </li>
+  <li>
+   <p>
+    Si tengo 🍔🍔🍔 y le voy a dar de comer 1 a cada 😋😋😋😋 quedo
+    debiendo 🍔. O sea 3 - 4 === -1.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si a + b = c, entonces a = c - b. De esta forma se define la resta, como
+    la operación contraria a la suma.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los matemáticos se repusieron 😁, pero posteriormente hubo algo que les
+    partió el corazón 😢.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >E. Los números racionales (&rationals;)</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Repartir 🎈🎈🎈🎈 🎈🎈🎈🎈 🎈🎈🎈🎈 entre 👼👼👼 para que a todos les
+    toque lo mismo.
+   </p>
+  </li>
+  <li>
+   <p>👼 🎈🎈🎈🎈<br>👼 🎈🎈🎈🎈<br>👼 🎈🎈🎈🎈</p>
+  </li>
+  <li>
+   <p>O sea 12/3 === 4</p>
+  </li>
+  <li>
+   <p>
+    Si repartimos 12 entre 3 dándole la misma cantidad a todos, a cada uno le
+    tocan 4.
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>División entera y residuo</h1>
+  <ul>
+   <li>
+    <p>
+     Repartir 🎈🎈🎈🎈 🎈🎈🎈🎈 🎈🎈🎈 entre 👼👼👼 para que a todos les
+     toque lo mismo.
+    </p>
+   </li>
+   <li>
+    <p>👼 🎈🎈🎈<br>👼 🎈🎈🎈<br>👼 🎈🎈🎈<br>y 🎈🎈 no se reparten.</p>
+   </li>
+   <li>
+    <p>11 div 3 === 3.</p>
+   </li>
+   <li>
+    <p>11 % 3 === 2.</p>
+   </li>
+   <li>
+    <p>Si a = ((b)(c)) + d, con 0 ≤ d &lt; c, a div c = b. Al resultado se
+     le conoce como <dfn>cociente</dfn> o <dfn>división entera</dfn>.</p>
+    <p>Como 11 = ((3)(3)) + 2 y 0 ≤ 2 &lt; 3, 11 div 3 = 3.</p>
+   </li>
+   <li>
+    <p>
+     Si a = ((b)(c)) + d, con 0 ≤ d &lt; c, a % c = d. Al resultado se le
+     conoce como <dfn>módulo</dfn> o como <dfn>residuo</dfn>.
+    </p>
+    <p>Como 11 = 3 * 3 + 2, y 0 ≤ 2 &lt; 3, 11 % 3 = 2 </p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>División exacta</h1>
+  <ul>
+   <li>
+    <p>
+     Repartir 🎈🎈🎈🎈 🎈🎈🎈🎈 🎈🎈🎈 entre 👼👼👼 para que a todos les
+     toque lo mismo, pero que no sobre nada.
+    </p>
+   </li>
+   <li>
+    <p>
+     A cada 👼 le tocan 🎈🎈🎈 y tenemos que partir los 🎈🎈 que sobran de tal
+     forma que todos les toque la misma cantidad de 🎈.
+    </p>
+   </li>
+   <li>
+    <p>
+     11 / 3 === (9/3) + (2/3) === 3+(2/3). A cada 👼 le tocan 🎈🎈🎈 y 2
+     partes de lo que resulta de partir 🎈 en 3 pedazos iguales.
+    </p>
+   </li>
+   <li>
+    <p>
+     2/3 se puede expresar con decimales, obteniendo 0.6666... con el número 6
+     repitiéndose, sin parar. A la parte que se repite se le llama periodo.
+    </p>
+   </li>
+   <li>
+    <p>
+     Por lo mismo, 11/3 también se puede expresar como 3.666... o 3.(6),
+     poniendo entre paréntesis el periodo.
+    </p>
+   </li>
+   <li>
+    <p>Si (a)(b) = c, entonces c/b = a.</p>
+   </li>
+   <li>
+    <p>
+     Se pensaba que todos los números se podían expresar como fracciones o
+     como números periódicos. Hasta aquí todos eran felices 😁, pero hubo
+     algo que les rompió el corazón 😢.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >F. Los números irracionales</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Algunos campesinos que necesitaban calcular el número de semillas que
+    necesitaban para sembrar sus campos. Para simplificar su trabajo,
+    dividian el campo en triángulos, pues había fórmulas para calcular el
+    área de un triángulo. A partir de aquí se desarrolló la trigonometría.
+   </p>
+   <figure>
+    <img alt="Cálculo de área con triángulos"
+      src="/img/m17numeros/octogono-irregular-area.webp">
+    <figcaption>Cálculo de área con triángulos.</figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    Otros los hicieron con rectángulos. A partir de aquí se desarrolló el
+    cálculo diferencial e integral.
+   </p>
+   <figure>
+    <img alt="Cálculo de área con rectángulos"
+      src="/img/m17numeros/figura-1.-rectc3a1ngulos-inscritos.webp">
+    <figcaption>Cálculo de áre con rectángulos.</figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    Al estudiar los triángulos descubrieron que en los triángulos
+    rectángulos, la suma de los cuadrados de cada cateto es igual al cuadrado
+    de la hipotenusa.
+   </p>
+  </li>
+  <li>
+   <p>
+    Aunque este resultado se obtuvo en la antigua Babilonia (hoy Irak), llega
+    a nosotros por medio de la escuela pitagórica de hace mucho, pero mucho
+    tiempo, en lo que hoy es Grecia.
+   </p>
+  </li>
+  <li>
+   <p>
+    En el siguiente triángulo, a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>.
+   </p>
+   <figure>
+    <img alt="Teorema de pitágoras"
+      src="/img/m17numeros/Pythagorean_right_angle.svg">
+    <figcaption>De <a
+       href="//commons.wikimedia.org/wiki/User:Marianov"
+       title="User:Marianov">Marianov</a> - <span
+       class="int-own-work" lang="es">Trabajo
+      propio</span>, <a
+       href="http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+       title="Creative Commons Zero, Public Domain Dedication">CC0</a>, <a
+       href="https://commons.wikimedia.org/w/index.php?curid=42125657">Enlace</a>
+    </figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    La operación a<sup>2</sup> = (a)(a). Por ejemplo,
+    3<sup>2</sup> = (3)(3) = 9.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para poder obtener el valor de la hipotenusa, se desarrolló la raíz
+    cuadrada, de tal forma que si a<sup>2</sup> = b, entonces a = √b.
+   </p>
+  </li>
+  <li>
+   <p>Se sabía que si a y b valen 1, el valor de c es √2.</p>
+  </li>
+  <li>
+   <p>
+    Un miembro de la escuela pitagórica se dió cuenta de que √2 no se puede
+    expresar como número racional; su escuela tenía como dogma que el
+    Universo era perfecto y todo se podía expresar como números racionales. El
+    descubridor murió; unos dicen que se suicidó y otros dicen que lo
+    suicidaron en su escuela y sus miembros fingieron felicidad 🙄, aunque
+    tenían el corazón partido 😢 y ocultaron este resultado al mundo 🤬, pero
+    con el paso del tiempo todo el mundo se enteró de este resultado y no le
+    importó.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los matemáticos volvieron a ser felices 😁, pero hubo algo que les rompió
+    el corazón 😢.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >G. Rarezas matemáticas</h1><div class="lectura">
+ <section>
+  <h1>0 / 0</h1>
+  <ul>
+   <li>
+    <p>El resultado de 0/0. De la fórmula, se requiere que (a)(0) = 0.</p>
+   </li>
+   <li>
+    <p>(0)(0) = 0.</p>
+   </li>
+   <li>
+    <p>(1)(0) = 0.</p>
+   </li>
+   <li>
+    <p>(-233.45)(0) = 0.</p>
+   </li>
+   <li>
+    <p>
+     No existe un resultado único; el número que se te ocurra es una solución
+     🤪.
+    </p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>√-1</h1>
+  <ul>
+   <li>
+    <p>
+     El resultado de √-1. De la fórmula, se requiere que a<sup>2</sup> = -1. O
+     sea que (a)(a) = -1; pero por la regla de los signos el resultado no se
+     puede cumplir (-1)(-1) = 1 y (1)(1) = 1. 😵
+    </p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Paradojas lógicas</h1>
+  <ul>
+   <li>
+    <p>
+     Los matemáticos observaron que las matemáticas llevaban a contradicciones
+     lógicas y se les partió el corazón 😢, pero pensaban que se podían
+     corregir. A finales del siglo XIX hicieron un concurso que se llamaba
+     Metamatemáticas, donde se le iba a dar mucho dinero 💵 a quien pudiera
+     hacer una formulación de las matemáticas que no tuviera errores.
+    </p>
+   </li>
+   <li>
+    <p>
+     Los matemáticos tenían entonces la esperanza de ser felices 🙃, pero hubo
+     algo que les rompió el corazón 😭.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >H. Los teoremas de Gödel</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Kurt Gödel demostró en los años 30 del siglo XX que aquellas matemáticas
+    que razonen usando al menos los números naturales, tienen uno de 2
+    problemas.
+   </p>
+   <dl>
+    <dt>Contradicción</dt>
+    <dd>
+     <p>
+      Hay algunas cosas que se puede demostrar que son falsas, pero también se
+      puede demostrar que son verdaderas 😡.
+     </p>
+    </dd>
+    <dt>Incompletez</dt>
+    <dd>
+     <p>
+      Hay algunas cosas que no se puede demostrar si son verdaderas o son
+      falsas 🙁.
+     </p>
+    </dd>
+   </dl>
+   <figure>
+    <img alt="Foto de Kurt Gödel"
+      src="/img/m17numeros/571px-Kurt-godel1.webp">
+    <figcaption>
+     De <a target="_blank" rel="noopener"
+       href="//commons.wikimedia.org/w/index.php?title=User:Kedumuc10&amp;amp;action=edit&amp;amp;redlink=1"
+       class="new"
+       title="User:Kedumuc10 (page does not exist)">;Kedumuc10</a>; - <span
+       class="int-own-work" lang="es">;Trabajo
+      propio</span>;, <a target="_blank" rel="noopener"
+       href="https://creativecommons.org/licenses/by-sa/4.0"
+       title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>,
+     <a target="_blank" rel="noopener"
+       href="https://commons.wikimedia.org/w/index.php?curid=49253794">Enlace</a>
+    </figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    Otro de los problemas es que no se sabe cual es el problema hasta que te
+    explota en la cara y que si ya encontraste el problema y lo arreglas,
+    aparecerá otro problema de incompletez o de contradicción, pero una vez
+    más no lo puedes detectar hasta que te explota en la cara.
+   </p>
+  </li>
+  <li>
+   <p>
+    Aquí los matemáticos se volvieron infelices 😭. Algunos pretendieron que
+    estos teoremas nunca existieron. Otros lo ocultaron. Otros pretendieron
+    demostrar que el señor Gödel estaba mal.
+   </p>
+  </li>
+  <li>
+   <p>
+    Lo que se consiguió fué demostrar de muchas formas que los teoremas de
+    Gödel estaban bien, pero se pudo encontrar una salida: no usar conjuntos
+    infinitos como los números naturales, enteros, racionales o reales 😜.
+   </p>
+  </li>
+  <li>
+   <p>
+    Empezaron los estudios que llevaron a la Teoría Matemática de la
+    Computación, a las computadoras, los videojuegos, las redes sociales,
+    teniendo también la satisfacción de saber que las matemáticas con las que
+    tanto nos torturaron en la escuela están dañadas y nunca las podrán
+    arreglar. ¡Ja!¡Ja!¡Ja! 🤣🤣😂😈.
+   </p>
+  </li>
+  <li>
+   <p>
+    Esto no quiere decir que las matemáticas no sirvan, pero tienen unas
+    sorpresitas para los que las quieran usar. Úselas bajo su riesgo.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. El tipo de dato <dfn><code class="language-javascript">number</code></dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Representa números en JavaScript.</p>
+  </li>
+  <li>
+   <p>
+    Como la cantidad de números reales definidos por las matemáticas es infinita
+    en muchos sentidos y no se puede implementar en una computadora. La cantidad
+    números es infinita porque no tiene límite para los números positivos y
+    negativos, pero además entre 2 números hay una cantidad infinita de números.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para poder usar algo parecido a los números reales, necesitamos un modelo
+    que sea totalmente finito en cuanto a la cantidad total de números y la
+    cantidad de números entre 2 números.
+   </p>
+  </li>
+  <li>
+   <p>
+    En JavaScript se usa el estándar
+    <dfn>IEEE 754</dfn>
+    y en realidad son límites.
+   </p>
+  </li>
+  <li>
+   <p>
+    Un <dfn>límite</dfn> es un número que se representa a sí mismo, a
+    números ligeramente menores y ligeramente mayores; por ejemplo,
+    <code class="language-javascript">1.0</code>
+    representa a
+    <code class="language-javascript">1.0</code>,
+    así como números muy cercanos,
+    como podrían ser
+    <code class="language-javascript">1.000000000000000000000001</code>,
+    <code class="language-javascript">1.000000000000000000000002</code>,
+    <code class="language-javascript">0.999999999999999999999999</code>
+    o
+    <code class="language-javascript">0.999999999999999999999998</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Incluyen a los números enteros como
+    <code class="language-javascript">1</code>,
+    <code class="language-javascript">2</code>,
+    <code class="language-javascript">101</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    El valor <code class="language-javascript">0</code> representa a los números
+    cercanos a 0, ya sean positivos o negativos.
+   </p>
+  </li>
+  <li>
+   <p>
+    El valor <code class="language-javascript">+0</code> representa a los
+    números positivos cercanos a 0.
+   </p>
+  </li>
+  <li>
+   <p>
+    El valor <code class="language-javascript">-0</code> representa a los
+    números negativos cercanos a 0.
+   </p>
+  </li>
+  <li>
+   <p>
+    El valor
+    <code class="language-javascript">NaN</code>
+    representa valores que no son un número; por ejemplo, los resultados
+    de
+    <code class="language-javascript">0 / 0</code>
+    y
+    <code class="language-javascript">Math.sqrt(-1)</code>
+    (la raíz cuadrada de -1).
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>Temas por Investigar</h1>
+  <ul>
+   <li>
+    <p>Representación de números en notación científica.</p>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >J. Resumen</h1><div class="lectura">
+ <p>Se revisó la forma en que se formulan:</p>
+ <ul>
+   <li>
+     <p>Los números naturales.</p>
+   </li>
+   <li>
+     <p>Los números enteros.</p>
+   </li>
+   <li>
+     <p>Los números racionales.</p>
+   </li>
+   <li>
+     <p>Los números irracionales.</p>
+   </li>
+   <li>
+     <p>Rarezas matemáticas.</p>
+   </li>
+   <li>
+     <p>Los teoremas de Gödel.</p>
+   </li>
+   <li>
+     <p>El tipo de dato <code class=\"language-javascript\">number</code>.</p>
+   </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>
