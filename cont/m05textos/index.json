@@ -1,19 +1,19 @@
 {
  "type": "A",
- "title": "Textos",
- "description": "Contenido de la lección «5. Textos»",
- "printDescription": "Página para imprimir de la lección «5. Textos».",
+ "title": "Textos y booleanos",
+ "description": "Contenido de la lección «5. Textos y booleanos»",
+ "printDescription": "Página para imprimir de la lección «5. Textos y booleanos».",
  "listado": [
   {
    "name": "mAcaracter.html",
    "title": "Caracter",
    "h1": "<dfn>Caracter</dfn>",
-   "description": "Definición de Cadena de texto."
+   "description": "Definición de cracter."
   },
   {
    "name": "mBtexto.html",
    "title": "Cadena de texto",
-   "description": "Definición de Cadena de texto."
+   "description": "Definición de cadena de texto."
   },
   {
    "name": "mCcodificacion.html",
@@ -22,9 +22,15 @@
    "description": "Definición de codificación."
   },
   {
-   "name": "mDresumen.html",
+   "name": "mDboolean.html",
+   "title": "Booleano",
+   "h1": "<dfn>Booleano</dfn>",
+   "description": "Definición de booleano."
+  },
+  {
+   "name": "mEresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «5. Textos»."
+   "description": "Resumen de la lección «5. Textos y booleanos»."
     }
  ]
 }

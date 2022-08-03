@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>D. Código fuente - GilPG ITI</title>
- <meta name="description" content="Definición de código fuente.">
+ <title>D. Booleano - GilPG ITI</title>
+ <meta name="description" content="Definición de booleano.">
  <meta name="og:image" content="https://gilpgiti.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -424,14 +424,23 @@
  <button id="abre" type="button" title="Menú" class="cambiaMenu">
   &#x2630;
  </button>
- <a class="anterior" href="/m04software/mCmaquina.html" title="C. Lenguaje de máquina">◀</a>
- <a class="siguiente" href="/m04software/mEcompilador.html" title="E. Compilador">▶</a>
-   <h1 >D. <dfn>Código fuente</dfn></h1><div class="lectura">
+ <a class="anterior" href="/m05textos/mCcodificacion.html" title="C. Codificación">◀</a>
+ <a class="siguiente" href="/m05textos/mEresumen.html" title="E. Resumen">▶</a>
+   <h1 >D. <dfn>Booleano</dfn></h1><div class="lectura">
  <ul>
   <li>
-   <p>Programa expresado usando uno o más lenguajes de programación.</p>
+   <p>Representa la lógica de valores verdaderos y falsos.</p>
   </li>
  </ul>
+ <section>
+  <h1>Valores</h1>
+  <dl>
+   <dt>Verdadero</dt>
+   <dd><code class="language-javascript">true</code></dd>
+   <dt>Falso</dt>
+   <dd><code class="language-javascript">false</code></dd>
+  </dl>
+ </section>
 </div>
  <footer>
  <p>
@@ -463,49 +472,39 @@
     <a href="/index.html"
       data-logo="true">GilPG ITI</a>
    </p><p>
-    <a class="paginaAnterior" href="/m03hardware/mIresumen.html"
-      title="I. Resumen">▲</a>
+    <a class="paginaAnterior" href="/m04software/mGresumen.html"
+      title="G. Resumen">▲</a>
    </p>
-     <h1><a href="/m04software/index.html">4. Software</a></h1>
+     <h1><a href="/m05textos/index.html">5. Textos y booleanos</a></h1>
    <ol type="A">
     <li>
      <p>
-      <a href="/m04software/mAsoftware.html"><dfn>Software</dfn></a>
+      <a href="/m05textos/mAcaracter.html"><dfn>Caracter</dfn></a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04software/mBlenguaje.html"><dfn>Lenguaje de programación</dfn></a>
+      <a href="/m05textos/mBtexto.html">Cadena de texto</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04software/mCmaquina.html"><dfn>Lenguaje de máquina</dfn></a>
+      <a href="/m05textos/mCcodificacion.html"><dfn>Codificación</dfn></a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04software/mDcodigo.html" class="actual"><dfn>Código fuente</dfn></a>
+      <a href="/m05textos/mDboolean.html" class="actual"><dfn>Booleano</dfn></a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m04software/mEcompilador.html">Compilador</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04software/mFinterprete.html"><dfn>Intérprete</dfn></a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m04software/mGresumen.html">Resumen</a>
+      <a href="/m05textos/mEresumen.html">Resumen</a>
      </p>
     </li>
    </ol><p>
-    <a class="paginaSiguiente" href="/m05textos/index.html"
-      title="5. Textos y booleanos">▼</a>
+    <a class="paginaSiguiente" href="/m06numeros/index.html"
+      title="6. Números">▼</a>
    </p>
 </nav>
  <script>
@@ -517,9 +516,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m04software/mCmaquina.html"
+ let urlAnterior = "/m05textos/mCcodificacion.html"
  /**@type {string} */
- let urlSiguiente = "/m04software/mEcompilador.html"
+ let urlSiguiente = "/m05textos/mEresumen.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
