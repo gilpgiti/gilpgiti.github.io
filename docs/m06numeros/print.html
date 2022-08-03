@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>Números - GilPG IJS</title>
+ <title>Números - GilPG ITI</title>
  <meta name="description" content="Página para imprimir de la lección «17. Números».">
  <style>
  :root {
@@ -346,7 +346,8 @@
    </div>
 <div class="lectura">
  <p>
-  En esta lección se presenta un resumen de la historia de los numeros.
+  En esta lección se presenta un resumen de la historia de los numeros. Está
+  basada en el libro: <q>El reino de los números</q> de <em>Isaac Asimov</em>.
  </p>
  <nav>
   <h1>Contenido</h1>
@@ -394,12 +395,17 @@
     </li>
     <li>
      <p>
-      <a href="/m06numeros/mInumber.html">El tipo de dato <dfn><code class="language-javascript">number</code></dfn></a>
+      <a href="/m06numeros/mIenteros.html">Representación de números enteros</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06numeros/mJresumen.html">Resumen</a>
+      <a href="/m06numeros/mJnumber.html">Representación de números en general</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06numeros/mKresumen.html">Resumen</a>
      </p>
     </li>
    </ol>
@@ -583,6 +589,11 @@ I I I I  /
    <li>
     <p>a' + b = (a + b)'</p>
    </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Ejemplos</h1>
+  <ul>
    <li>
     <p>0 + 3 = 3</p>
    </li>
@@ -601,7 +612,8 @@ I I I I  /
  <ul>
   <li>
    <p>
-    Fabrico 🎈🎈🎈🎈 en un día ¿Cuantos en 3 días?
+    Si le quiero dar 🎈🎈🎈🎈 a cada angelito y tengo 3 amgelitos, ¿Cuantos debo
+    comprar?
    </p>
   </li>
   <li>
@@ -619,6 +631,11 @@ I I I I  /
    <li>
     <p>(a)(b') = ((a)(b)) + a</p>
    </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Ejemplos</h1>
+  <ul>
    <li>
     <p>(2)(0) = 0</p>
    </li>
@@ -721,10 +738,10 @@ I I I I  /
     <p>👼 🎈🎈🎈<br>👼 🎈🎈🎈<br>👼 🎈🎈🎈<br>y 🎈🎈 no se reparten.</p>
    </li>
    <li>
-    <p>11 div 3 === 3.</p>
+    <p>11 div 3 === 3, es el cociente.</p>
    </li>
    <li>
-    <p>11 % 3 === 2.</p>
+    <p>11 % 3 === 2, es el residuo.</p>
    </li>
    <li>
     <p>Si a = ((b)(c)) + d, con 0 ≤ d &lt; c, a div c = b. Al resultado se
@@ -1001,14 +1018,18 @@ I I I I  /
   <li>
    <p>
     Lo que se consiguió fué demostrar de muchas formas que los teoremas de
-    Gödel estaban bien, pero se pudo encontrar una salida: no usar conjuntos
-    infinitos como los números naturales, enteros, racionales o reales 😜.
+    Gödel estaban bien, pero se pudo encontrar una salida: no razonar usando
+    conjuntos infinitos como los números naturales, enteros, racionales o reales
+    😜. Tampoco se podía calificar una teoría por medio de la misma teoría, o
+    sea que las matemáticas no se pueden usar para saber si las matemáticas
+    funcionan bien.
    </p>
   </li>
   <li>
    <p>
-    Empezaron los estudios que llevaron a la Teoría Matemática de la
-    Computación, a las computadoras, los videojuegos, las redes sociales,
+    Con estas restricciones empezaron los estudios que llevaron a la Teoría
+    Matemática de la Computación, a las computadoras, los videojuegos, las redes
+    sociales,
     teniendo también la satisfacción de saber que las matemáticas con las que
     tanto nos torturaron en la escuela están dañadas y nunca las podrán
     arreglar. ¡Ja!¡Ja!¡Ja! 🤣🤣😂😈.
@@ -1024,11 +1045,53 @@ I I I I  /
 </div>
       </section>
      <section >
-         <h1 >I. El tipo de dato <dfn><code class="language-javascript">number</code></dfn></h1><div class="lectura">
+         <h1 >I. Representación de números enteros</h1><div class="lectura">
+ <figure>
+  <img src="/img/m17numeros/enteros.svg" alt="Recta de los números IEE 754">
+  <figcaption>Círculo de los números enteros</figcaption>
+ </figure>
  <ul>
   <li>
-   <p>Representa números en JavaScript.</p>
+   <p>
+    <strong>
+     El uso de estos números para cálculos financieros es riesgoso.
+    </strong>
+   </p>
   </li>
+  <li>
+   <p>
+    Los números enteros se representan con una cierta cantidad de bits.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los números enteros positivos se representan en notación binaria.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los números enteros negativos se representan con una notación llamada
+    complemento de 2.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si le sumas 1 al número más grande que se puede representar, sucede un
+    <dfb>desbordamiento</dfb> y el resultado es el número más negativo posible.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si le restas 1 al número más negativo que se puede representar, sucede otro
+    <dfb>desbordamiento</dfb> y el resultado es el número más positivo posible.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >J. Representación de números en general</h1><div class="lectura">
+ <ul>
   <li>
    <p>
     Como la cantidad de números reales definidos por las matemáticas es infinita
@@ -1046,9 +1109,18 @@ I I I I  /
   </li>
   <li>
    <p>
-    En JavaScript se usa el estándar
+    La computadoras usan el estándar
     <dfn>IEEE 754</dfn>
     y en realidad son límites.
+   </p>
+   <figure>
+    <img src="/img/m17numeros/numeros.svg" alt="Recta de los números IEE 754">
+    <figcaption>Recta de los números IEEE 754</figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    <strong>Estos números no se deben usar para cálculos financieros.</strong>
    </p>
   </li>
   <li>
@@ -1095,6 +1167,18 @@ I I I I  /
   </li>
   <li>
    <p>
+    Hay un valor positivo muy grande después del cuál, el siguiente número es el
+    símbolo <code class="language-javascript">POSITIVE_INFINITY</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Hay un valor negativo muy pequeño antes del cuál, el número anterior es el
+    símbolo <code class="language-javascript">NEGATIVE_INFINITY</code>.
+   </p>
+  </li>
+  <li>
+   <p>
     El valor
     <code class="language-javascript">NaN</code>
     representa valores que no son un número; por ejemplo, los resultados
@@ -1117,7 +1201,7 @@ I I I I  /
 </div>
       </section>
      <section >
-         <h1 >J. Resumen</h1><div class="lectura">
+         <h1 >K. Resumen</h1><div class="lectura">
  <p>Se revisó la forma en que se formulan:</p>
  <ul>
    <li>
@@ -1139,7 +1223,10 @@ I I I I  /
      <p>Los teoremas de Gödel.</p>
    </li>
    <li>
-     <p>El tipo de dato <code class=\"language-javascript\">number</code>.</p>
+     <p>Representación de números enteros.</p>
+   </li>
+   <li>
+     <p>Representación de números en general.</p>
    </li>
  </ul>
 </div>

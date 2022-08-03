@@ -23,7 +23,13 @@
    "name": "mDprogramas"
   },
   {
-   "name": "mEresumen.html",
+   "name": "mEalgoritmo.html",
+   "title": "Algoritmo",
+   "h1": "<dfn>Algoritmo</dfn>",
+   "description": "Definición de algoritmo."
+  },
+  {
+   "name": "mFresumen.html",
    "title": "Resumen",
    "description": "Resumen de la lección «2. Programas»."
   }

@@ -38,22 +38,26 @@
    "name": "mGrarezas.html",
    "title": "Rarezas matemáticas",
    "description": "Presentación de algunas rarezas matemáticas."
-    },
+  },
   {
    "name": "mHgodel.html",
    "title": "Los teoremas de Gödel",
    "description": "Presentación de los teoremas de Gödel."
-    },
+  },
   {
-   "name": "mInumber.html",
-   "title": "El tipo de dato number",
-   "h1": "El tipo de dato <dfn><code class=\"language-javascript\">number</code></dfn>",
-   "description": "Definición del tipo de dato number."
-    },
+   "name": "mIenteros.html",
+   "title": "Representación de números enteros",
+   "description": "Explica las características de los números enteros."
+  },
   {
-   "name": "mJresumen.html",
+   "name": "mJnumber.html",
+   "title": "Representación de números en general",
+   "description": "Explica las características de los números de punto flotante."
+  },
+  {
+   "name": "mKresumen.html",
    "title": "Resumen",
    "description": "Resumen de la lección «17. Números»."
-    }
+  }
  ]
 }
