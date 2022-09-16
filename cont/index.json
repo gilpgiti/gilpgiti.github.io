@@ -8,8 +8,8 @@
   {"name": "m02programas"},
   {"name": "m03hardware"},
   {"name": "m04software"},
+  {"name": "m07nativas"},
   {"name": "m05textos"},
-  {"name": "m06numeros"},
-  {"name": "m07nativas"}
+  {"name": "m06numeros"}
  ]
 }

@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Números",
- "description": "Contenido de la lección «17. Números».",
- "printDescription": "Página para imprimir de la lección «17. Números».",
+ "description": "Contenido de la lección «Números».",
+ "printDescription": "Página para imprimir de la lección «Números».",
  "listado": [
   {
    "name": "mAnaturales.html",
@@ -57,7 +57,7 @@
   {
    "name": "mKresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «17. Números»."
+   "description": "Resumen de la lección «Números»."
   }
  ]
 }

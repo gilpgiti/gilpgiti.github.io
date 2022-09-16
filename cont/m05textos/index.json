@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Textos y booleanos",
- "description": "Contenido de la lección «5. Textos y booleanos»",
- "printDescription": "Página para imprimir de la lección «5. Textos y booleanos».",
+ "description": "Contenido de la lección «Textos y booleanos»",
+ "printDescription": "Página para imprimir de la lección «Textos y booleanos».",
  "listado": [
   {
    "name": "mAcaracter.html",
@@ -30,7 +30,7 @@
   {
    "name": "mEresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «5. Textos y booleanos»."
+   "description": "Resumen de la lección «Textos y booleanos»."
     }
  ]
 }

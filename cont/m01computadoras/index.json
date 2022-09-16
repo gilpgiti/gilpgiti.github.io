@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Computadoras",
- "description": "Contenido de la lección «1. Computadoras.",
- "printDescription": "Página para imprimir de la lección «1. Computadoras».",
+ "description": "Contenido de la lección «Computadoras.",
+ "printDescription": "Página para imprimir de la lección «Computadoras».",
  "listado": [
   {
    "name": "mAcomputadora.html",
@@ -16,7 +16,7 @@
   {
    "name": "mCresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «1. Computadoras»."
+   "description": "Resumen de la lección «Computadoras»."
   }
  ]
 }

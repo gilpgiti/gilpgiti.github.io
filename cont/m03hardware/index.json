@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Hardware",
- "description": "Contenido de la lección «3. Hardware».",
- "printDescription": "Página para imprimir de la lección «3. Hardware».",
+ "description": "Contenido de la lección «Hardware».",
+ "printDescription": "Página para imprimir de la lección «Hardware».",
  "listado": [
   {
    "name": "mAhardware.html",
@@ -55,7 +55,7 @@
   {
    "name": "mIresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «3. Hardware»."
+   "description": "Resumen de la lección «Hardware»."
   }
  ]
 }

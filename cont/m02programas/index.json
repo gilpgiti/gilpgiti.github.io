@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Programas",
- "description": "Contenido de la lección «2. Programas».",
- "printDescription": "Página para imprimir de la lección «2. Programas».",
+ "description": "Contenido de la lección «Programas».",
+ "printDescription": "Página para imprimir de la lección «Programas».",
  "listado": [
   {
    "name": "mAprograma.html",
@@ -31,7 +31,7 @@
   {
    "name": "mFresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «2. Programas»."
+   "description": "Resumen de la lección «Programas»."
   }
  ]
 }

@@ -1,8 +1,8 @@
 {
  "type": "A",
  "title": "Software",
- "description": "Contenido de la lección «4. Software».",
- "printDescription": "Página para imprimir de la lección «4. Software».",
+ "description": "Contenido de la lección «Software».",
+ "printDescription": "Página para imprimir de la lección «Software».",
  "listado": [
   {
    "name": "mAsoftware.html",
@@ -42,7 +42,7 @@
   {
    "name": "mGresumen.html",
    "title": "Resumen",
-   "description": "Resumen de la lección «4. Software»."
+   "description": "Resumen de la lección «Software»."
   }
  ]
 }
