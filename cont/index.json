@@ -4,6 +4,11 @@
  "description": "Página de inicio de GilPGITI que enseña introducción a las tecnologías de la información.",
  "printDescription": "Página para imprimir todo el contenido de GilPGITI que enseña introducción a las tecnologías de la información.",
  "listado": [
+  {
+   "name": "m00instrucciones.html",
+   "title": "Instrucciones de navegación",
+   "description": "Instrucciones de navegación por el sitio."
+  },
   {"name": "m01computadoras"},
   {"name": "m02programas"},
   {"name": "m03hardware"},
