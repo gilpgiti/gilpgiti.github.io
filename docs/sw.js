@@ -83,7 +83,7 @@ const ARCHIVOS = [
  "/img/m17numeros/571px-Kurt-godel1.webp",
  "/img/m17numeros/enteros.drawio.svg",
  "/img/m17numeros/figura-1.-rectc3a1ngulos-inscritos.webp",
- "/img/m17numeros/numeros.svg",
+ "/img/m17numeros/numeros.drawio.svg",
  "/img/m17numeros/octogono-irregular-area.webp",
  "/img/m17numeros/pexels-tara-winstead-6692937-1920.webp",
  "/img/m17numeros/pexels-tara-winstead-6692937-640.webp",

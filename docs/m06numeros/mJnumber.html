@@ -903,10 +903,11 @@
    <p>
     La computadoras usan el estándar
     <dfn>IEEE 754</dfn>
-    y en realidad son límites.
+    y en realidad son rangos.
    </p>
    <figure>
-    <img src="/img/m17numeros/numeros.svg" alt="Recta de los números IEE 754">
+    <img src="/img/m17numeros/numeros.drawio.svg"
+         alt="Recta de los números IEE 754">
     <figcaption>Recta de los números IEEE 754</figcaption>
    </figure>
   </li>
@@ -917,10 +918,10 @@
   </li>
   <li>
    <p>
-    Un <dfn>límite</dfn> es un número que se representa a sí mismo, a
-    números ligeramente menores y ligeramente mayores; por ejemplo,
+    Un <dfn>rango</dfn> es un número que se representa a sí mismo, a
+    números menores y a números mayores; por ejemplo,
     <code class="language-javascript">1.0</code>
-    representa a
+    puede representar a
     <code class="language-javascript">1.0</code>,
     así como números muy cercanos,
     como podrían ser
@@ -929,6 +930,12 @@
     <code class="language-javascript">0.999999999999999999999999</code>
     o
     <code class="language-javascript">0.999999999999999999999998</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Los rangos cerca del 0 son muy pequeños y conforme se alejan de dicha cifra
+    son más grandes.
    </p>
   </li>
   <li>
@@ -959,14 +966,28 @@
   </li>
   <li>
    <p>
-    Hay un valor positivo muy grande después del cuál, el siguiente número es el
-    símbolo <code class="language-javascript">POSITIVE_INFINITY</code>.
+   El valor positivo imediatamente después del 0 se llama
+    <code class="language-javascript">MIN_VALUE</code>.
    </p>
   </li>
   <li>
    <p>
-    Hay un valor negativo muy pequeño antes del cuál, el número anterior es el
-    símbolo <code class="language-javascript">NEGATIVE_INFINITY</code>.
+   El valor negativo imediatamente antes del 0 se llama
+    <code class="language-javascript">-MIN_VALUE</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Hay un valor positivo muy grande, llamado MAX_VALUE, después del cuál, el
+    siguiente número es el símbolo
+    <code class="language-javascript">POSITIVE_INFINITY</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Hay un valor negativo muy pequeño, llamado -MAX_VALUE, antes del cuál, el
+    número anterior es el símbolo
+    <code class="language-javascript">NEGATIVE_INFINITY</code>.
    </p>
   </li>
   <li>
